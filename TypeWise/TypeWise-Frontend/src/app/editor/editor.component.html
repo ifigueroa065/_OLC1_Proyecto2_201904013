@@ -1,0 +1,36 @@
+<div class="container">
+    <!--Editor de Texto-->
+    <div class="row">
+        <div class="col-100">
+            <h1>TypeWise</h1>
+            <form [formGroup]="form" (ngSubmit)="enviarCodigo()">
+                <div class="row">
+                    <div class="col-100">
+                        <div class="btn-group">
+                            <button (click)="limpiar()">Nuevo</button>
+                            <input type="file" class="file-input" (change)="abrir($event)" #fileUpload multiple>
+                            <button  (click)="fileUpload.click()">Abrir</button>
+                            <button (click)="guardar()">Guardar</button>
+                          </div>
+                        <textarea  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" formControlName="codigo" class="code" [(ngModel)]="carga"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-100 flex j-end">
+                        <button [disabled]="form.invalid" type="submit">Analizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <!--Console-->
+    <div class="row">
+        <div class="col-100">
+            <div class="consol">
+                <span style="text-align: center;">OUTPUT</span>
+                <pre>{{salida}}</pre>
+            </div>
+        </div> 
+    </div>
+</div>
