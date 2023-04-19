@@ -20,5 +20,5 @@ y producir las salidas esperadas.
 * Aplicar la teoría de compiladores para la creación de soluciones de software.
 
 
-## :closed_book: Lecturas Recomendadas 
-    https://github.com/ifigueroa065/Jflex-Cup
+## :closed_book: Agrega Boostrap a tu proyecto Angular
+    https://fbellod.medium.com/como-integrar-el-framework-bootstrap-en-un-proyecto-angular-a5d53fa79e03
