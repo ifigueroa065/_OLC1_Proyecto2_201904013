@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 
@@ -11,60 +12,18 @@
   display: none;
 }
 
-.btn-group button {
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
-  font-size: 0.8rem;
-  border: 2px solid #2d2d2d ;
-  border-radius:0px;
-  background-color: #2d2d2d;
-  color: white;
+.btn-group{
+  padding: 20px 20px 20px 20px; /* Some padding */
+  
+ 
 }
 
-.btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
-}
 
-.btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
-}
 
-.btn-group button:hover {
-  background-color: #008489;
-}
 
-button {
-  font-size: 0.8rem;
-  padding: 0.5em 1em;
-  border: 1px solid #2d2d2d;
-  border-radius: 0.4em;
-  background-color: #2d2d2d;
-  color: white;
-  transition: all 400ms ease-in-out;
-}
-button.outline {
-  color: #2d2d2d;
-  background-color: white;
-}
-button:hover {
-  background-color: #025b5e;
-}
-button.outline:hover {
-  color: white;
-  background-color: #025b5e;
-}
-button.icon {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-button.icon img {
-  margin-right: 0.3rem;
-}
+
+
+
 
 .card {
   padding: 1rem;
@@ -98,6 +57,7 @@ table td {
   margin: 0 auto;
   transition: 600ms opacity linear;
 }
+
 
 .row {
   display: flex;
@@ -248,12 +208,14 @@ form .row {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 form .row textarea {
   background: rgb(39,40,34);
-  border: 1px solid #67666e;
-  border-radius: 0.3rem;
+  border: 1px solid rgb(39,40,34);;
+
   font-size: 0.7rem;
   padding: 0.5em 1em;
   width: 100%;
@@ -263,32 +225,25 @@ form .row textarea {
   color: white;
 }
 
+
+
 .consol{
   width: 100%;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
-  background: white;
-  border: 1px solid #67666e;
-  border-radius: 0.3rem;
-  font-size: 0.7rem;
-  padding: 0.5em 1em;
+  background: rgb(71, 71, 71);
+  font-size: 0.9rem;
   width: 100%;
-  height: 200px;
+  height: 350px;
   transition: 400ms all ease-in-out;
-  font-family: 'Roboto Mono', monospace;
-  color:black;
-  overflow: scroll;
+  font-family: 'Roboto Mono';
+  color:rgba(255, 255, 255, 0.772);
+  overflow: visible;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
+
 
 hr {
   border-top: 3px dashed #2d2d2d;
@@ -337,5 +292,7 @@ h2 {
 b {
   color: #2d2d2d;
 }
+
+
 
 
