@@ -8,8 +8,8 @@ import { Observable } from "rxjs";
 })
 export class AnalizarService {
 
-  static el: Array<any>;  //ERROES
-  static sl: Array<any>; //SINBOLOS
+  static el: Array<any>;  //ERRORES
+  static sl: Array<any>; //SIMBOLOS
   static sm: Array<any>; //METODOS
   static dot: string; //CODIGO DOT
 

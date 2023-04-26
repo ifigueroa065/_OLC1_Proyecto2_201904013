@@ -53,7 +53,7 @@ export class EditorComponent implements OnInit {
     let element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(this.carga));
     const d = new Date();
-    this.nameFile = "Archivo Generado_" + d + ".cst";
+    this.nameFile = "Archivo Generado_" + d + ".tw";
     element.setAttribute('download', this.nameFile);
 
     element.style.display = 'none';

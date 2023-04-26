@@ -3,6 +3,9 @@
 function Graphviz(raiz){
     let contador = 0
     var salida = "digraph G{" + "\n"
+    salida +="bgcolor= lightblue;"
+    salida +="node[style=filled fillcolor= \"#36941c \" fontname=\" Comic Sans MS \" color=\"#36941c \"];"
+    salida +="Raiz[label=\"" + raiz.valor + "\"];\n"
     salida += "Raiz[label=\"" + raiz.valor + "\"];\n"
     conectar("Raiz", raiz)
     salida += "}";
