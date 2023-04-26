@@ -1,6 +1,6 @@
 
 #  Organización de Lenguajes y Compiladores 1 :skull:
-##  Proyecto 2 :rocket:
+##  Proyecto 2 :green_apple:
 
 
 Generando lenguaje TypeWise  (intérprete)
@@ -19,6 +19,23 @@ interpretación de código de alto nivel.
 y producir las salidas esperadas.
 * Aplicar la teoría de compiladores para la creación de soluciones de software.
 
-
-## :closed_book: Agrega Boostrap a tu proyecto Angular
+### :closed_book: Agrega Boostrap a tu proyecto Angular
     https://fbellod.medium.com/como-integrar-el-framework-bootstrap-en-un-proyecto-angular-a5d53fa79e03
+
+## ¿Qué necesitas para este proyecto? 
+
+### :four_leaf_clover: Node 
+    https://nodejs.org/en
+
+### :a: Angular
+    npm install -g @angular/cli
+ 
+
+### :large_orange_diamond: Jison
+    npm install jison -g
+
+## :arrow_forward: ¿Cómo correr el proyecto? 
+
+- :one: Debes realizar **npm install** en Backend y Frontend para instalar las dependecias necesarias
+- :two: ejecuta **npm start** :)
+- :three: Para compilar la gramatica necesitas ejecutar **jison** gramatica.jison
