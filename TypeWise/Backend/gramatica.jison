@@ -31,7 +31,7 @@
 "typeof"                    return 'typeof';
 "tostring"                  return 'tostring';
 "tochararray"               return 'tochar';
-"run"                       return 'run';
+"main"                      return 'run';
 "if"                        return 'if';
 "else"                      return 'else';
 "switch"                    return 'switch';
@@ -291,21 +291,17 @@ VALORES: VALORES coma corA LISTAVALORES corC
         }
 ;
 //Declarar Metodos----------------------------------------------------------------------------
-DMETODO: identificador parA parC llavA INSTRUCCIONES llavC 
+DMETODO: void identificador parA parC llavA INSTRUCCIONES llavC 
         {
-                $$ = INSTRUCCION.dmetodo($1, null, $5, this._$.first_line, this._$.first_column+1)
+                $$ = INSTRUCCION.dmetodo($2, null, $6, this._$.first_line, this._$.first_column+1)
         }
-        |identificador parA parC dospuntos void llavA INSTRUCCIONES llavC
+        | void identificador parA parC   llavA INSTRUCCIONES llavC
         {
-                $$ = INSTRUCCION.dmetodo($1, null, $7, this._$.first_line, this._$.first_column+1)
+                $$ = INSTRUCCION.dmetodo($2, null, $6, this._$.first_line, this._$.first_column+1)
         }
-        | identificador parA PARAMETROS parC llavA INSTRUCCIONES llavC 
+        | void identificador parA PARAMETROS parC llavA INSTRUCCIONES llavC 
         {
-                $$ = INSTRUCCION.dmetodo($1, $3, $6, this._$.first_line, this._$.first_column+1)
-        }
-        |identificador parA PARAMETROS parC dospuntos void llavA INSTRUCCIONES llavC
-        {
-                $$ = INSTRUCCION.dmetodo($1, $3, $8, this._$.first_line, this._$.first_column+1)
+                $$ = INSTRUCCION.dmetodo($2, $4, $7, this._$.first_line, this._$.first_column+1)
         }
 ;
 
