@@ -72,12 +72,12 @@
   }
 */
 var arbol = (function(){
-var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,9],$V1=[1,13],$V2=[1,14],$V3=[1,15],$V4=[1,16],$V5=[1,17],$V6=[1,18],$V7=[1,19],$V8=[2,5,18,83,84,85,86,87,88],$V9=[2,5,18,33,51,53,57,58,59,60,61,64,65,66,67,68,83,84,85,86,87,88],$Va=[18,21,30,31],$Vb=[1,29],$Vc=[12,15,17],$Vd=[2,13],$Ve=[1,46],$Vf=[1,38],$Vg=[1,55],$Vh=[1,56],$Vi=[1,57],$Vj=[1,58],$Vk=[1,59],$Vl=[1,60],$Vm=[1,61],$Vn=[1,40],$Vo=[1,41],$Vp=[1,42],$Vq=[1,43],$Vr=[1,44],$Vs=[1,45],$Vt=[1,37],$Vu=[1,39],$Vv=[17,30],$Vw=[1,73],$Vx=[1,74],$Vy=[1,75],$Vz=[1,76],$VA=[1,77],$VB=[1,78],$VC=[1,79],$VD=[1,80],$VE=[1,81],$VF=[1,82],$VG=[1,83],$VH=[1,84],$VI=[1,85],$VJ=[1,86],$VK=[1,87],$VL=[12,17,22,30,34,95,96,97,98,99,100,101,102,103,104,105,106,107,108,110],$VM=[1,119],$VN=[1,120],$VO=[1,124],$VP=[1,125],$VQ=[1,128],$VR=[1,129],$VS=[1,130],$VT=[1,121],$VU=[1,126],$VV=[1,127],$VW=[1,122],$VX=[1,123],$VY=[1,138],$VZ=[12,17,22,30,34,95,96,101,102,103,104,105,106,107,108],$V_=[2,18,33,51,53,57,58,59,60,61,64,65,66,67,68,84,85,86,87,88],$V$=[12,17,22,30,34,95,96,97,98,99,101,102,103,104,105,106,107,108],$V01=[12,17,22,30,34,101,102,103,104,105,106,107,108],$V11=[1,216],$V21=[1,210],$V31=[1,211],$V41=[1,212],$V51=[1,213],$V61=[1,214],$V71=[1,215],$V81=[1,233],$V91=[1,243],$Va1=[17,22],$Vb1=[1,298],$Vc1=[33,57,58];
+var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,9],$V1=[1,14],$V2=[1,13],$V3=[1,15],$V4=[1,16],$V5=[1,17],$V6=[1,18],$V7=[1,19],$V8=[1,20],$V9=[2,5,18,29,83,84,85,86,87,88],$Va=[2,5,18,29,34,51,53,57,58,59,60,61,64,65,66,67,68,83,84,85,86,87,88],$Vb=[18,21,31,32],$Vc=[1,31],$Vd=[12,15,17],$Ve=[2,13],$Vf=[1,33],$Vg=[1,49],$Vh=[1,41],$Vi=[1,58],$Vj=[1,59],$Vk=[1,60],$Vl=[1,61],$Vm=[1,62],$Vn=[1,63],$Vo=[1,64],$Vp=[1,43],$Vq=[1,44],$Vr=[1,45],$Vs=[1,46],$Vt=[1,47],$Vu=[1,48],$Vv=[1,40],$Vw=[1,42],$Vx=[1,71],$Vy=[17,31],$Vz=[1,77],$VA=[1,78],$VB=[1,79],$VC=[1,80],$VD=[1,81],$VE=[1,82],$VF=[1,83],$VG=[1,84],$VH=[1,85],$VI=[1,86],$VJ=[1,87],$VK=[1,88],$VL=[1,89],$VM=[1,90],$VN=[1,91],$VO=[12,17,22,31,36,95,96,97,98,99,100,101,102,103,104,105,106,107,108,110],$VP=[1,114],$VQ=[12,17,22,31,36,95,96,101,102,103,104,105,106,107,108],$VR=[1,160],$VS=[1,162],$VT=[1,166],$VU=[1,167],$VV=[1,170],$VW=[1,171],$VX=[1,172],$VY=[1,163],$VZ=[1,168],$V_=[1,169],$V$=[1,164],$V01=[1,165],$V11=[12,17,22,31,36,95,96,97,98,99,101,102,103,104,105,106,107,108],$V21=[12,17,22,31,36,101,102,103,104,105,106,107,108],$V31=[2,18,34,51,53,57,58,59,60,61,64,65,66,67,68,84,85,86,87,88],$V41=[1,220],$V51=[1,214],$V61=[1,215],$V71=[1,216],$V81=[1,217],$V91=[1,218],$Va1=[1,219],$Vb1=[1,242],$Vc1=[1,245],$Vd1=[17,22],$Ve1=[1,298],$Vf1=[34,57,58];
 var parser = {trace: function trace () { },
 yy: {},
-symbols_: {"error":2,"INICIO":3,"SENTENCIAS":4,"EOF":5,"SENTENCIA":6,"DVARIABLES":7,"DARREGLOS":8,"DMETODO":9,"DFUNCION":10,"RUN":11,"puntocoma":12,"TIPO":13,"LISTAID":14,"asignar":15,"EXPRESION":16,"coma":17,"identificador":18,"AVARIABLES":19,"AARREGLOS":20,"corA":21,"corC":22,"UDIMENSION":23,"BDIMENSION":24,"new":25,"LISTAVALORES":26,"VALORES":27,"PRIMITIVO":28,"parA":29,"parC":30,"llavA":31,"INSTRUCCIONES":32,"llavC":33,"dospuntos":34,"void":35,"PARAMETROS":36,"PARAMETRO":37,"LLAMADA":38,"ENTRADAS":39,"LLAMADAS":40,"INSTRUCCION":41,"RETURN":42,"PRINT":43,"IF":44,"SWITCH":45,"BREAK":46,"CONTINUE":47,"WHILE":48,"DOWHILE":49,"FOR":50,"if":51,"else":52,"switch":53,"CASES":54,"DEFAULT":55,"CASO":56,"case":57,"default":58,"while":59,"do":60,"for":61,"DVAR":62,"AVAR":63,"return":64,"break":65,"continue":66,"print":67,"println":68,"UPPER":69,"toUpper":70,"LOWER":71,"toLower":72,"ROUND":73,"round":74,"LENGTH":75,"length":76,"TYPEOF":77,"typeof":78,"TOSTRING":79,"tostring":80,"TOCHAR":81,"tochar":82,"run":83,"int":84,"double":85,"boolean":86,"char":87,"string":88,"entero":89,"doble":90,"true":91,"false":92,"texto":93,"caracter":94,"mas":95,"menos":96,"mul":97,"div":98,"mod":99,"exp":100,"igual":101,"desigual":102,"menor":103,"menorIgual":104,"mayor":105,"mayorIgual":106,"or":107,"and":108,"not":109,"ternario":110,"$accept":0,"$end":1},
-terminals_: {2:"error",5:"EOF",12:"puntocoma",15:"asignar",17:"coma",18:"identificador",21:"corA",22:"corC",25:"new",29:"parA",30:"parC",31:"llavA",33:"llavC",34:"dospuntos",35:"void",51:"if",52:"else",53:"switch",57:"case",58:"default",59:"while",60:"do",61:"for",64:"return",65:"break",66:"continue",67:"print",68:"println",70:"toUpper",72:"toLower",74:"round",76:"length",78:"typeof",80:"tostring",82:"tochar",83:"run",84:"int",85:"double",86:"boolean",87:"char",88:"string",89:"entero",90:"doble",91:"true",92:"false",93:"texto",94:"caracter",95:"mas",96:"menos",97:"mul",98:"div",99:"mod",100:"exp",101:"igual",102:"desigual",103:"menor",104:"menorIgual",105:"mayor",106:"mayorIgual",107:"or",108:"and",109:"not",110:"ternario"},
-productions_: [0,[3,2],[4,2],[4,1],[6,1],[6,1],[6,1],[6,1],[6,1],[6,2],[7,5],[7,3],[14,3],[14,1],[19,4],[20,7],[20,10],[8,1],[8,1],[23,11],[23,9],[23,7],[24,16],[24,11],[26,3],[26,1],[27,5],[27,3],[9,6],[9,8],[9,7],[9,9],[10,8],[10,9],[36,3],[36,1],[37,2],[38,4],[38,5],[40,3],[40,4],[32,2],[32,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,2],[44,7],[44,11],[44,9],[45,8],[45,7],[54,2],[54,1],[56,4],[55,3],[48,7],[49,9],[50,11],[50,11],[62,4],[63,3],[42,2],[42,3],[46,2],[47,2],[43,5],[43,5],[69,4],[71,4],[73,4],[75,4],[77,4],[79,4],[81,4],[11,5],[11,6],[39,3],[39,1],[13,1],[13,1],[13,1],[13,1],[13,1],[28,1],[28,1],[28,1],[28,1],[28,1],[28,1],[28,1],[16,3],[16,3],[16,3],[16,3],[16,3],[16,3],[16,2],[16,3],[16,3],[16,3],[16,3],[16,3],[16,3],[16,3],[16,3],[16,3],[16,2],[16,5],[16,1],[16,1],[16,1],[16,1],[16,1],[16,1],[16,1],[16,4],[16,3],[16,3],[16,4],[16,7],[16,1],[16,1],[16,1],[16,1],[16,1],[16,1],[16,1],[16,1]],
+symbols_: {"error":2,"INICIO":3,"SENTENCIAS":4,"EOF":5,"SENTENCIA":6,"DVARIABLES":7,"DARREGLOS":8,"DMETODO":9,"DFUNCION":10,"RUN":11,"puntocoma":12,"TIPO":13,"LISTAID":14,"asignar":15,"EXPRESION":16,"coma":17,"identificador":18,"AVARIABLES":19,"AARREGLOS":20,"corA":21,"corC":22,"UDIMENSION":23,"BDIMENSION":24,"new":25,"LISTAVALORES":26,"VALORES":27,"PRIMITIVO":28,"void":29,"parA":30,"parC":31,"llavA":32,"INSTRUCCIONES":33,"llavC":34,"PARAMETROS":35,"dospuntos":36,"PARAMETRO":37,"LLAMADA":38,"ENTRADAS":39,"LLAMADAS":40,"INSTRUCCION":41,"RETURN":42,"PRINT":43,"IF":44,"SWITCH":45,"BREAK":46,"CONTINUE":47,"WHILE":48,"DOWHILE":49,"FOR":50,"if":51,"else":52,"switch":53,"CASES":54,"DEFAULT":55,"CASO":56,"case":57,"default":58,"while":59,"do":60,"for":61,"DVAR":62,"AVAR":63,"return":64,"break":65,"continue":66,"print":67,"println":68,"UPPER":69,"toUpper":70,"LOWER":71,"toLower":72,"ROUND":73,"round":74,"LENGTH":75,"length":76,"TYPEOF":77,"typeof":78,"TOSTRING":79,"tostring":80,"TOCHAR":81,"tochar":82,"run":83,"int":84,"double":85,"boolean":86,"char":87,"string":88,"entero":89,"doble":90,"true":91,"false":92,"texto":93,"caracter":94,"mas":95,"menos":96,"mul":97,"div":98,"mod":99,"exp":100,"igual":101,"desigual":102,"menor":103,"menorIgual":104,"mayor":105,"mayorIgual":106,"or":107,"and":108,"not":109,"ternario":110,"$accept":0,"$end":1},
+terminals_: {2:"error",5:"EOF",12:"puntocoma",15:"asignar",17:"coma",18:"identificador",21:"corA",22:"corC",25:"new",29:"void",30:"parA",31:"parC",32:"llavA",34:"llavC",36:"dospuntos",51:"if",52:"else",53:"switch",57:"case",58:"default",59:"while",60:"do",61:"for",64:"return",65:"break",66:"continue",67:"print",68:"println",70:"toUpper",72:"toLower",74:"round",76:"length",78:"typeof",80:"tostring",82:"tochar",83:"run",84:"int",85:"double",86:"boolean",87:"char",88:"string",89:"entero",90:"doble",91:"true",92:"false",93:"texto",94:"caracter",95:"mas",96:"menos",97:"mul",98:"div",99:"mod",100:"exp",101:"igual",102:"desigual",103:"menor",104:"menorIgual",105:"mayor",106:"mayorIgual",107:"or",108:"and",109:"not",110:"ternario"},
+productions_: [0,[3,2],[4,2],[4,1],[6,1],[6,1],[6,1],[6,1],[6,1],[6,2],[7,5],[7,3],[14,3],[14,1],[19,4],[20,7],[20,10],[8,1],[8,1],[23,11],[23,9],[23,7],[24,16],[24,11],[26,3],[26,1],[27,5],[27,3],[9,7],[9,8],[10,7],[10,17],[35,3],[35,1],[37,2],[38,4],[38,5],[40,3],[40,4],[33,2],[33,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,1],[41,2],[44,7],[44,11],[44,9],[45,8],[45,7],[54,2],[54,1],[56,4],[55,3],[48,7],[49,9],[50,11],[50,11],[62,4],[63,3],[42,2],[42,3],[46,2],[47,2],[43,5],[43,5],[69,4],[71,4],[73,4],[75,4],[77,4],[79,4],[81,4],[11,5],[11,6],[39,3],[39,1],[13,1],[13,1],[13,1],[13,1],[13,1],[28,1],[28,1],[28,1],[28,1],[28,1],[28,1],[28,1],[16,3],[16,3],[16,3],[16,3],[16,3],[16,3],[16,2],[16,3],[16,3],[16,3],[16,3],[16,3],[16,3],[16,3],[16,3],[16,3],[16,2],[16,5],[16,1],[16,1],[16,1],[16,1],[16,1],[16,1],[16,1],[16,4],[16,3],[16,3],[16,4],[16,7],[16,1],[16,1],[16,1],[16,1],[16,1],[16,1],[16,1],[16,1]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
 
@@ -106,10 +106,10 @@ case 1:
 break;
 case 2:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
                 entrada2 = $$[$0]
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push(entrada2.instruccion)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -124,10 +124,10 @@ case 2:
 break;
 case 3:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("SENTENCIAS", "SENTENCIAS")
                 nodo.add(entrada1.nodo)
@@ -140,10 +140,10 @@ case 3:
 break;
 case 4: case 5: case 6: case 7: case 8:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("SENTENCIA", "SENTENCIA")
                 nodo.add(entrada1.nodo)
@@ -154,18 +154,18 @@ case 4: case 5: case 6: case 7: case 8:
                 this.$ = salida
         
 break;
-case 9: case 57:
+case 9: case 55:
 
                 lista.add("Sintáctico", "Token Inesperado " + $$[$0-1] , _$[$0-1].first_line, _$[$0-1].first_column + 1);
         
 break;
 case 10:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-4]
                 entrada2 = $$[$0-3]
                 entrada3 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaracionv(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEC VARIABLES", "DEC VARIABLES")
                 nodo.add(entrada1.nodo, entrada2.nodo ,new Nodo("OPERADOR", $$[$0-2]), entrada3.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -178,10 +178,10 @@ case 10:
 break;
 case 11:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaracionv(entrada1.instruccion, entrada2.instruccion, null, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("DEC VARIABLES", "DEC VARIABLES")
                 nodo.add(entrada1.nodo, entrada2.nodo ,new Nodo("OPERADOR", $$[$0]))
@@ -194,9 +194,9 @@ case 11:
 break;
 case 12:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push($$[$0])
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -210,7 +210,7 @@ case 12:
 break;
 case 13:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [$$[$0]]
                 nodo = new Nodo("LISTA ID", "LISTA ID")
                 nodo.add(new Nodo("ID", $$[$0]))
@@ -223,10 +223,10 @@ case 13:
 break;
 case 14:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
                 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.asignacionv($$[$0-3],entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("ASI VARIABLES", "ASI VARIABLES")
                 nodo.add(new Nodo("ID", $$[$0-3]),new Nodo("OPERADOR", $$[$0-2]),  entrada1.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -240,11 +240,11 @@ case 14:
 break;
 case 15:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-4]
                 entrada2 = $$[$0-1]
                 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.asignarv($$[$0-6], entrada1.instruccion, null, entrada2.instruccion,  this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("ASI UNIDIMENSIONAL", "ASI UNIDIMENSIONAL")
                 nodo.add(new Nodo("ID", $$[$0-6]),new Nodo("OPERADOR", $$[$0-5]),  entrada1.nodo, new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]),  entrada2.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -257,12 +257,12 @@ case 15:
 break;
 case 16:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-7]
                 entrada2 = $$[$0-4]
                 entrada3 = $$[$0-1]
                 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion =  INSTRUCCION.asignarv($$[$0-9], entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("ASI BIDIMENSIONAL", "ASI BIDIMENSIONAL")
                 nodo.add(new Nodo("OPERADOR", $$[$0-9]),new Nodo("OPERADOR", $$[$0-8]),  entrada1.nodo, new Nodo("OPERADOR", $$[$0-6]), new Nodo("OPERADOR", $$[$0-5]),  entrada2.nodo, new Nodo("OPERADOR", $$[$0-3]))
@@ -276,10 +276,10 @@ case 16:
 break;
 case 17: case 18:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("DEC ARREGLOS", "DEC ARREGLOS")
                 nodo.add(entrada1.nodo)
@@ -293,11 +293,11 @@ case 17: case 18:
 break;
 case 19:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-10]
                 entrada2 = $$[$0-4]
                 entrada3 = $$[$0-2]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaraciona1(entrada1.instruccion, $$[$0-9], entrada2.instruccion, entrada3.instruccion, null,this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEC UNIDIMENSIONAL", "DEC UNIDIMENSIONAL")
                 nodo.add(entrada1.nodo, new Nodo("ID", $$[$0-9]),new Nodo("OPERADOR", $$[$0-8]), new Nodo("OPERADOR", $$[$0-7]), new Nodo("OPERADOR", $$[$0-6]),  new Nodo("OPERADOR", $$[$0-5]), entrada2.nodo ,new Nodo("OPERADOR", $$[$0-3]), entrada3.nodo, new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -310,10 +310,10 @@ case 19:
 break;
 case 20:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-8]
                 entrada2 = $$[$0-2]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaraciona2(1, entrada1.instruccion, $$[$0-7], entrada2.instruccion, null, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("DEC UNIDIMENSIONAL", "DEC UNIDIMENSIONAL")
                 nodo.add(entrada1.nodo, new Nodo("ID", $$[$0-7]),new Nodo("OPERADOR", $$[$0-6]), new Nodo("OPERADOR", $$[$0-5]), new Nodo("OPERADOR", $$[$0-4]),  new Nodo("OPERADOR", $$[$0-3]), entrada2.nodo ,new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -327,10 +327,10 @@ case 20:
 break;
 case 21:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-6]
                 entrada2 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaraciona3(1, entrada1.instruccion, $$[$0-5], entrada1.instruccion, null, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("DEC UNIDIMENSIONAL", "DEC UNIDIMENSIONAL")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-5]),new Nodo("OPERADOR", $$[$0-4]), new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]),  entrada2.nodo ,new Nodo("OPERADOR", $$[$0]))
@@ -343,12 +343,12 @@ case 21:
 break;
 case 22:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-15]
                 entrada2 = $$[$0-7]
                 entrada3 = $$[$0-5]
                 entrada4 = $$[$0-2]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaraciona1(entrada1.instruccion, $$[$0-14], entrada2.instruccion, entrada3.instruccion, entrada4.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEC BIDIMENSIONAL", "DEC BIDIMENSIONAL")
                 nodo.add(entrada1.nodo, new Nodo("ID", $$[$0-14]),new Nodo("OPERADOR", $$[$0-13]), new Nodo("OPERADOR", $$[$0-12]), new Nodo("OPERADOR", $$[$0-11]),  new Nodo("OPERADOR", $$[$0-10]), new Nodo("OPERADOR", $$[$0-9]),new Nodo("OPERADOR", $$[$0-8]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-6]), entrada3.nodo, new Nodo("OPERADOR", $$[$0-4]), new Nodo("OPERADOR", $$[$0-3]), entrada4.nodo, new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -362,10 +362,10 @@ case 22:
 break;
 case 23:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-10]
                 entrada2 = $$[$0-2]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaraciona2(2, entrada1.instruccion, $$[$0-9], entrada2.instruccion, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("DEC BIDIMENSIONAL", "DEC BIDIMENSIONAL")
                 nodo.add(entrada1.nodo, new Nodo("ID", $$[$0-9]),new Nodo("OPERADOR", $$[$0-8]), new Nodo("OPERADOR", $$[$0-7]), new Nodo("OPERADOR", $$[$0-6]),  new Nodo("OPERADOR", $$[$0-5]), new Nodo("OPERADOR", $$[$0-4]),new Nodo("OPERADOR", $$[$0-3]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -379,10 +379,10 @@ case 23:
 break;
 case 24:
 
-                 //Obtencion de valores
+                 //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0]
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push(entrada2.instruccion)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -396,10 +396,10 @@ case 24:
 break;
 case 25:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("LISTAVALORES", "LISTAVALORES")
                 nodo.add(entrada1.nodo)
@@ -412,10 +412,10 @@ case 25:
 break;
 case 26:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-4]
                 entrada2 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push(entrada2.instruccion)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -429,10 +429,10 @@ case 26:
 break;
 case 27:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("VALORES", "VALORES")
                 nodo.add(entrada1.nodo)
@@ -445,9 +445,9 @@ case 27:
 break;
 case 28:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada2 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.dmetodo($$[$0-5], null, entrada2.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEC METODO", "DEC METODO")
                 nodo.add(new Nodo("ID", $$[$0-5]), new Nodo("OPERADOR", $$[$0-4]), new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada2.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -461,25 +461,10 @@ case 28:
 break;
 case 29:
 
-                //Obtencion de valores
-                entrada2 = $$[$0-1]
-                //Creacion de la salida
-                instruccion = INSTRUCCION.dmetodo($$[$0-7], null, entrada2.instruccion, this._$.first_line, this._$.first_column+1)
-                nodo = new Nodo("DEC METODO", "DEC METODO")
-                nodo.add(new Nodo("ID", $$[$0-7]), new Nodo("OPERADOR", $$[$0-6]), new Nodo("OPERADOR", $$[$0-5]), new Nodo("OPERADOR", $$[$0-4]), new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada2.nodo, new Nodo("OPERADOR", $$[$0]))
-                salida = {
-                        nodo: nodo,
-                        instruccion: instruccion
-                }
-                this.$ = salida
-        
-break;
-case 30:
-
-                //Obtencion de valores
+                //GET:  Values
                 entrada2 = $$[$0-4]
                 entrada3 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.dmetodo($$[$0-6], entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEC METODO", "DEC METODO")
                 nodo.add(new Nodo("ID", $$[$0-6]), new Nodo("OPERADOR", $$[$0-5]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada3.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -490,15 +475,33 @@ case 30:
                 this.$ = salida
         
 break;
-case 31:
+case 30:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada2 = $$[$0-6]
                 entrada3 = $$[$0-1]
-                //Creacion de la salida
-                instruccion = INSTRUCCION.dmetodo($$[$0-8], entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
-                nodo = new Nodo("DEC METODO", "DEC METODO")
-                nodo.add(new Nodo("ID", $$[$0-8]), new Nodo("OPERADOR", $$[$0-7]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-5]), new Nodo("OPERADOR", $$[$0-4]), new Nodo("OPERADOR", $$[$0-3]),new Nodo("OPERADOR", $$[$0-2]), entrada3.nodo, new Nodo("OPERADOR", $$[$0]))
+                //OUTPUT
+                instruccion = INSTRUCCION.dfuncion($$[$0-5], null, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
+                nodo = new Nodo("DEC FUNCION", "DEC FUNCION")
+                nodo.add(new Nodo("ID", $$[$0-5]), new Nodo("OPERADOR", $$[$0-4]), new Nodo("OPERADOR", $$[$0-3]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-2]), entrada3.nodo,  new Nodo("OPERADOR", $$[$0]))
+                salida = {
+                        nodo: nodo,
+                        instruccion: instruccion
+                }
+                this.$ = salida
+                
+        
+break;
+case 31:
+
+                //GET:  Values
+                entrada2 = $$[$0-13]
+                entrada3 = $$[$0-16]
+                entrada4 = $$[$0-10]
+                //OUTPUT
+                instruccion = INSTRUCCION.dfuncion($$[$0-15], entrada2.instruccion, entrada3.instruccion, entrada4.instruccion, this._$.first_line, this._$.first_column+1)
+                nodo = new Nodo("DEC FUNCION", "DEC FUNCION")
+                nodo.add(new Nodo("ID", $$[$0-15]), new Nodo("OPERADOR", $$[$0-14]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-12]), entrada3.nodo, new Nodo("OPERADOR", $$[$0-11]), entrada4.nodo ,new Nodo("OPERADOR", $$[$0-9]))
                 salida = {
                         nodo: nodo,
                         instruccion: instruccion
@@ -508,44 +511,10 @@ case 31:
 break;
 case 32:
 
-                //Obtencion de valores
-                entrada2 = $$[$0-3]
-                entrada3 = $$[$0-1]
-                //Creacion de la salida
-                instruccion = INSTRUCCION.dfuncion($$[$0-7], null, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
-                nodo = new Nodo("DEC FUNCION", "DEC FUNCION")
-                nodo.add(new Nodo("ID", $$[$0-7]), new Nodo("OPERADOR", $$[$0-6]), new Nodo("OPERADOR", $$[$0-5]), new Nodo("OPERADOR", $$[$0-4]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-2]), entrada3.nodo,  new Nodo("OPERADOR", $$[$0]))
-                salida = {
-                        nodo: nodo,
-                        instruccion: instruccion
-                }
-                this.$ = salida
-                
-        
-break;
-case 33:
-
-                //Obtencion de valores
-                entrada2 = $$[$0-6]
-                entrada3 = $$[$0-3]
-                entrada4 = $$[$0-1]
-                //Creacion de la salida
-                instruccion = INSTRUCCION.dfuncion($$[$0-8], entrada2.instruccion, entrada3.instruccion, entrada4.instruccion, this._$.first_line, this._$.first_column+1)
-                nodo = new Nodo("DEC FUNCION", "DEC FUNCION")
-                nodo.add(new Nodo("ID", $$[$0-8]), new Nodo("OPERADOR", $$[$0-7]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-5]), new Nodo("OPERADOR", $$[$0-4]), entrada3.nodo, new Nodo("OPERADOR", $$[$0-2]), entrada4.nodo ,new Nodo("OPERADOR", $$[$0]))
-                salida = {
-                        nodo: nodo,
-                        instruccion: instruccion
-                }
-                this.$ = salida
-        
-break;
-case 34:
-
-               //Obtencion de valores
+               //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0]
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push(entrada2.instruccion)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -557,12 +526,12 @@ case 34:
                 this.$ = salida
         
 break;
-case 35:
+case 33:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("PARAMETROS", "PARAMETROS")
                 nodo.add(entrada1.nodo)
@@ -573,11 +542,11 @@ case 35:
                 this.$ = salida
         
 break;
-case 36:
+case 34:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaracionp(entrada1.instruccion, $$[$0], null, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("PARAMETRO", "PARAMETRO")
                 nodo.add(entrada1.nodo, new Nodo("ID", $$[$0]))
@@ -589,9 +558,9 @@ case 36:
 
         
 break;
-case 37:
+case 35:
 
-                        //Creacion de la salida
+                        //OUTPUT
                         instruccion = INSTRUCCION.llamada($$[$0-3], null, this._$.first_line, this._$.first_column+1)
                         nodo = new Nodo("LLAMAR", "LLAMAR")
                         nodo.add(new Nodo("ID", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -602,11 +571,11 @@ case 37:
                         this.$ = salida
                 
 break;
-case 38:
+case 36:
 
-                        //Obtencion de valores
+                        //GET:  Values
                         entrada1 = $$[$0-2]
-                        //Creacion de la salida
+                        //OUTPUT
                         instruccion = INSTRUCCION.llamadaa($$[$0-4], entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                         nodo = new Nodo("LLAMAR", "LLAMAR")
                         nodo.add(new Nodo("ID", $$[$0-4]), new Nodo("OPERADOR", $$[$0-3]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -617,9 +586,9 @@ case 38:
                         this.$ = salida
                 
 break;
-case 39:
+case 37:
 
-                        //Creacion de la salida
+                        //OUTPUT
                         instruccion = INSTRUCCION.llamadaa($$[$0-2], null, this._$.first_line, this._$.first_column+1)
                         nodo = new Nodo("LLAMAR", "LLAMAR")
                         nodo.add(new Nodo("ID", $$[$0-2]), new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -631,11 +600,11 @@ case 39:
                         
                 
 break;
-case 40:
+case 38:
 
-                        //Obtencion de valores
+                        //GET:  Values
                         entrada1 = $$[$0-1]
-                        //Creacion de la salida
+                        //OUTPUT
                         instruccion = INSTRUCCION.llamadaa($$[$0-3], entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                         nodo = new Nodo("LLAMAR", "LLAMAR")
                         nodo.add(new Nodo("IDENTIFICADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada1.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -646,12 +615,12 @@ case 40:
                         this.$ = salida
                 
 break;
-case 41: case 63:
+case 39: case 61:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
                 entrada2 = $$[$0]
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push(entrada2.instruccion)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -663,12 +632,12 @@ case 41: case 63:
                 this.$ = salida
         
 break;
-case 42:
+case 40:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("INSTRUCCIONES", "INSTRUCCIONES")
                 nodo.add(entrada1.nodo)
@@ -679,12 +648,12 @@ case 42:
                 this.$ = salida
         
 break;
-case 43:
+case 41:
 
-                 //Obtencion de valores
+                 //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -695,12 +664,12 @@ case 43:
                 this.$ = salida
         
 break;
-case 44: case 46: case 47: case 49: case 50: case 51: case 52: case 53: case 54: case 55: case 56:
+case 42: case 44: case 45: case 47: case 48: case 49: case 50: case 51: case 52: case 53: case 54:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -711,12 +680,12 @@ case 44: case 46: case 47: case 49: case 50: case 51: case 52: case 53: case 54:
                 this.$ = salida
         
 break;
-case 45: case 48:
+case 43: case 46:
 
-               //Obtencion de valores
+               //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -727,12 +696,12 @@ case 45: case 48:
                 this.$ = salida
         
 break;
-case 58:
+case 56:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-4]
                 entrada2 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.si(entrada1.instruccion, entrada2.instruccion, null, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("IF", "IF")
                 nodo.add(new Nodo("OPERADOR", $$[$0-6]), new Nodo("OPERADOR", $$[$0-5]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]),  entrada2.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -743,13 +712,13 @@ case 58:
                 this.$ = salida
         
 break;
-case 59:
+case 57:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-8]
                 entrada2 = $$[$0-5]
                 entrada2 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.si(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("IF", "IF")
                 nodo.add(new Nodo("OPERADOR", $$[$0-10]), new Nodo("OPERADOR", $$[$0-9]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-7]), new Nodo("OPERADOR", $$[$0-6]),  entrada2.nodo, new Nodo("OPERADOR", $$[$0-4]),new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada3.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -760,13 +729,13 @@ case 59:
                 this.$ = salida
         
 break;
-case 60:
+case 58:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-6]
                 entrada2 = $$[$0-3]
                 entrada2 = $$[$0]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.si(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("IF", "IF")
                 nodo.add(new Nodo("OPERADOR", $$[$0-8]), new Nodo("OPERADOR", $$[$0-7]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-5]), new Nodo("OPERADOR", $$[$0-4]),  entrada2.nodo, new Nodo("OPERADOR", $$[$0-2]),new Nodo("OPERADOR", $$[$0-1]), entrada3.nodo)
@@ -778,13 +747,13 @@ case 60:
 
         
 break;
-case 61:
+case 59:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-5]
                 entrada2 = $$[$0-2]
                 entrada3 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.switch(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("SWITCH", "SWITCH")
                 nodo.add(new Nodo("OPERADOR", $$[$0-7]), new Nodo("OPERADOR", $$[$0-6]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-4]), new Nodo("OPERADOR", $$[$0-3]),  entrada2.nodo, entrada3.nodo,  new Nodo("OPERADOR", $$[$0]))
@@ -795,12 +764,12 @@ case 61:
                 this.$ = salida
         
 break;
-case 62:
+case 60:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-4]
                 entrada2 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.switch(entrada1.instruccion, entrada2.instruccion,null, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("SWITCH", "SWITCH")
                 nodo.add(new Nodo("OPERADOR", $$[$0-6]), new Nodo("OPERADOR", $$[$0-5]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]),  entrada2.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -811,12 +780,12 @@ case 62:
                 this.$ = salida
         
 break;
-case 64:
+case 62:
 
-               //Obtencion de valores
+               //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("CASES", "CASES")
                 nodo.add(entrada1.nodo)
@@ -827,12 +796,12 @@ case 64:
                 this.$ = salida
         
 break;
-case 65:
+case 63:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.case(entrada1.instruccion, entrada2.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("CASE", "CASE")
                 nodo.add(new Nodo("OPERADOR", $$[$0-3]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
@@ -844,12 +813,12 @@ case 65:
         
         
 break;
-case 66:
+case 64:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0]
                 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.default(null, entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEFAULT", "DEFAULT")
                 nodo.add(new Nodo("OPERADOR", $$[$0-2]), new Nodo("OPERADOR", $$[$0-1]), entrada1.nodo)
@@ -860,12 +829,12 @@ case 66:
                 this.$ = salida
         
 break;
-case 67:
+case 65:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-4]
                 entrada2 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.while(entrada1.instruccion, entrada2.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("WHILE", "WHILE")
                 nodo.add(new Nodo("OPERADOR", $$[$0-6]), new Nodo("OPERADOR", $$[$0-5]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]),  entrada2.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -877,12 +846,12 @@ case 67:
 
         
 break;
-case 68:
+case 66:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada2 = $$[$0-6]
                 entrada1 = $$[$0-2]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.dowhile(entrada1.instruccion, entrada2.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DO-WHILE", "DO-WHILE")
                 nodo.add(new Nodo("OPERADOR", $$[$0-8]), new Nodo("OPERADOR", $$[$0-7]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-5]), new Nodo("OPERADOR", $$[$0-4]), new Nodo("OPERADOR", $$[$0-3]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -894,14 +863,14 @@ case 68:
                 
         
 break;
-case 69:
+case 67:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-8]
                 entrada2 = $$[$0-6]
                 entrada3 = $$[$0-4]
                 entrada4 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.for(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, entrada4.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("FOR", "FOR")
                 nodo.add(new Nodo("OPERADOR", $$[$0-10]), new Nodo("OPERADOR", $$[$0-9]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-7]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-5]), entrada3.nodo, new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada4.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -913,14 +882,14 @@ case 69:
                
         
 break;
-case 70:
+case 68:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-8]
                 entrada2 = $$[$0-6]
                 entrada3 = $$[$0-4]
                 entrada4 = $$[$0-1]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.for(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, entrada4.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("FOR", "FOR")
                 nodo.add(new Nodo("OPERADOR", $$[$0-10]), new Nodo("OPERADOR", $$[$0-9]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-7]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-5]), entrada3.nodo, new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada4.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -931,14 +900,14 @@ case 70:
                 this.$ = salida
         
 break;
-case 71:
+case 69:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-3]
                 entrada2 = $$[$0-2]
                 entrada3 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaracionv(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("DECLARACION VAR", "DECLARACION VAR")
                 nodo.add(entrada1.nodo, entrada2.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada3.nodo)
@@ -950,12 +919,12 @@ case 71:
                
         
 break;
-case 72:
+case 70:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada2 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.asignacionv($$[$0-2],entrada2.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("ASIGNACION VAR", "ASIGNACION VAR")
                 nodo.add(new Nodo("ID", $$[$0-2]), new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
@@ -967,9 +936,9 @@ case 72:
                
         
 break;
-case 73:
+case 71:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion =INSTRUCCION.return(null, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("RETURN", "RETURN")
                 salida = {
@@ -980,12 +949,12 @@ case 73:
                 
         
 break;
-case 74:
+case 72:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.return(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("RETURN", "RETURN")
                 nodo.add(new Nodo("OPERADOR", $$[$0-2]), entrada1.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -998,9 +967,9 @@ case 74:
                 
         
 break;
-case 75:
+case 73:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.break(this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("BREAK", "BREAK")
                 salida = {
@@ -1010,9 +979,9 @@ case 75:
                 this.$ = salida
         
 break;
-case 76:
+case 74:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.continue(this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("CONTINUE", "CONTINUE")
                 salida = {
@@ -1022,12 +991,12 @@ case 76:
                 this.$ = salida 
         
 break;
-case 77:
+case 75:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.print(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("PRINT", "PRINT")
                 nodo.add(new Nodo("OPERADOR", $$[$0-4]), new Nodo("OPERADOR", $$[$0-3]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -1039,12 +1008,12 @@ case 77:
         
         
 break;
-case 78:
+case 76:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.println(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("PRINTLN", "PRINTLN")
                 nodo.add(new Nodo("OPERADOR", $$[$0-4]), new Nodo("OPERADOR", $$[$0-3]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -1055,12 +1024,12 @@ case 78:
                 this.$ = salida
         
 break;
-case 79:
+case 77:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.upper(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("UPPER", "UPPER")
                 nodo.add(new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada1.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -1072,12 +1041,12 @@ case 79:
         
         
 break;
-case 80:
+case 78:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.lower(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("LOWER", "LOWER")
                 nodo.add(new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada1.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -1088,12 +1057,12 @@ case 80:
                 this.$ = salida
         
 break;
-case 81:
+case 79:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.round(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("ROUND", "ROUND")
                 nodo.add(new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada1.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -1105,12 +1074,12 @@ case 81:
                 
         
 break;
-case 82:
+case 80:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.length(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("LENGTH", "LENGTH")
                 nodo.add(new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada1.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -1121,12 +1090,12 @@ case 82:
                 this.$ = salida
         
 break;
-case 83:
+case 81:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.typeof(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("TYPEOF", "TYPEOF")
                 nodo.add(new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada1.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -1138,12 +1107,12 @@ case 83:
          
         
 break;
-case 84:
+case 82:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.tostring(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("TOSTRING", "TOSTRING")
                 nodo.add(new Nodo("TOSTRING", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada1.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -1155,12 +1124,12 @@ case 84:
                 
         
 break;
-case 85:
+case 83:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.tochar(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("TOCHAR", "TOCHAR")
                 nodo.add(new Nodo("TOCHAR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada1.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -1171,9 +1140,9 @@ case 85:
                 this.$ = salida 
         
 break;
-case 86:
+case 84:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.run($$[$0-3], null, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("RUN", "RUN")
                 nodo.add(new Nodo("RUN", $$[$0-4]), new Nodo("ID", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -1184,11 +1153,11 @@ case 86:
                 this.$ = salida
         
 break;
-case 87:
+case 85:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada2 = $$[$0-2]
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.run($$[$0-4], entrada2.instruccion, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("RUN", "RUN")
                 nodo.add(new Nodo("RUN", $$[$0-5]), new Nodo("ID", $$[$0-4]), new Nodo("OPERADOR", $$[$0-3]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -1200,12 +1169,12 @@ case 87:
                 
         
 break;
-case 88:
+case 86:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0]
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push(entrada2.instruccion)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -1217,12 +1186,12 @@ case 88:
                 this.$ = salida
         
 break;
-case 89:
+case 87:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("ENTRADA", "ENTRADA")
                 nodo.add(entrada1.nodo)
@@ -1233,9 +1202,9 @@ case 89:
                 this.$ = salida
         
 break;
-case 90:
+case 88:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = TIPO_DATO.INT
                 nodo = new Nodo("TIPO", "TIPO")
                 nodo.add(new Nodo("INT", $$[$0]))
@@ -1246,9 +1215,9 @@ case 90:
                 this.$ = salida
         
 break;
-case 91:
+case 89:
 
-            //Creacion de la salida
+            //OUTPUT
                 instruccion = TIPO_DATO.DOUBLE
                 nodo = new Nodo("TIPO", "TIPO")
                 nodo.add(new Nodo("DOUBLE", $$[$0]))
@@ -1259,9 +1228,9 @@ case 91:
                 this.$ = salida
     
 break;
-case 92:
+case 90:
 
-            //Creacion de la salida
+            //OUTPUT
                 instruccion = TIPO_DATO.BOOLEAN
                 nodo = new Nodo("TIPO", "TIPO")
                 nodo.add(new Nodo("BOOLEAN", $$[$0]))
@@ -1273,9 +1242,9 @@ case 92:
 
     
 break;
-case 93:
+case 91:
 
-            //Creacion de la salida
+            //OUTPUT
                 instruccion = TIPO_DATO.CHAR
                 nodo = new Nodo("TIPO", "TIPO")
                 nodo.add(new Nodo("CHAR", $$[$0]))
@@ -1286,9 +1255,9 @@ case 93:
                 this.$ = salida
     
 break;
-case 94:
+case 92:
 
-            //Creacion de la salida
+            //OUTPUT
                 instruccion = TIPO_DATO.STRING
                 nodo = new Nodo("TIPO", "TIPO")
                 nodo.add(new Nodo("STRING", $$[$0]))
@@ -1299,9 +1268,9 @@ case 94:
                 this.$ = salida
     
 break;
-case 95:
+case 93:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor(Number($$[$0]), TIPO_VALOR.INT, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("ENTERO", $$[$0]))
@@ -1312,9 +1281,9 @@ case 95:
                 this.$ = salida
         
 break;
-case 96:
+case 94:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor(Number($$[$0]), TIPO_VALOR.DOUBLE, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("DOBLE", $$[$0]))
@@ -1325,9 +1294,9 @@ case 96:
                 this.$ = salida
         
 break;
-case 97:
+case 95:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($$[$0], TIPO_VALOR.BOOLEAN, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("BOOLEAN", $$[$0]))
@@ -1338,9 +1307,9 @@ case 97:
                 this.$ = salida
         
 break;
-case 98:
+case 96:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($$[$0], TIPO_VALOR.BOOLEAN, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("BOOLEAN", $$[$0]))
@@ -1351,9 +1320,9 @@ case 98:
                 this.$ = salida
         
 break;
-case 99:
+case 97:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($$[$0], TIPO_VALOR.STRING, this._$.first_line, this._$.first_column+1);;
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("STRING", $$[$0]))
@@ -1364,9 +1333,9 @@ case 99:
                 this.$ = salida
         
 break;
-case 100:
+case 98:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($$[$0], TIPO_VALOR.CHAR, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("CHAR", $$[$0]))
@@ -1377,9 +1346,9 @@ case 100:
                 this.$ = salida
         
 break;
-case 101:
+case 99:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($$[$0], TIPO_VALOR.IDENTIFICADOR, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("ID", $$[$0]))
@@ -1390,14 +1359,48 @@ case 101:
                 this.$ = salida
         
 break;
-case 102:
+case 100:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.SUMA, this._$.first_line, this._$.first_column+1);
+                nodo = new Nodo("EXPRESION", "EXPRESION")
+                nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
+                salida = {
+                        nodo: nodo,
+                        instruccion: instruccion
+                }
+                this.$ = salida
+        
+break;
+case 101:
+
+                //GET:  Values
+                entrada1 = $$[$0-2]
+                entrada2 = $$[$0]
+
+                //OUTPUT
+                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.RESTA, this._$.first_line, this._$.first_column+1);
+                nodo = new Nodo("EXPRESION", "EXPRESION")
+                nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
+                salida = {
+                        nodo: nodo,
+                        instruccion: instruccion
+                }
+                this.$ = salida
+        
+break;
+case 102:
+
+                //GET:  Values
+                entrada1 = $$[$0-2]
+                entrada2 = $$[$0]
+
+                //OUTPUT
+                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MULTIPLICACION, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
                 salida = {
@@ -1409,12 +1412,12 @@ case 102:
 break;
 case 103:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0]
 
-                //Creacion de la salida
-                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.RESTA, this._$.first_line, this._$.first_column+1);
+                //OUTPUT
+                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.DIVISION, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
                 salida = {
@@ -1426,12 +1429,12 @@ case 103:
 break;
 case 104:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0]
 
-                //Creacion de la salida
-                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MULTIPLICACION, this._$.first_line, this._$.first_column+1);
+                //OUTPUT
+                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MODULO, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
                 salida = {
@@ -1443,45 +1446,11 @@ case 104:
 break;
 case 105:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0]
 
-                //Creacion de la salida
-                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.DIVISION, this._$.first_line, this._$.first_column+1);
-                nodo = new Nodo("EXPRESION", "EXPRESION")
-                nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
-                salida = {
-                        nodo: nodo,
-                        instruccion: instruccion
-                }
-                this.$ = salida
-        
-break;
-case 106:
-
-                //Obtencion de valores
-                entrada1 = $$[$0-2]
-                entrada2 = $$[$0]
-
-                //Creacion de la salida
-                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MODULO, this._$.first_line, this._$.first_column+1);
-                nodo = new Nodo("EXPRESION", "EXPRESION")
-                nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
-                salida = {
-                        nodo: nodo,
-                        instruccion: instruccion
-                }
-                this.$ = salida
-        
-break;
-case 107:
-
-                //Obtencion de valores
-                entrada1 = $$[$0-2]
-                entrada2 = $$[$0]
-
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.POTENCIA, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
@@ -1493,12 +1462,12 @@ case 107:
                 
         
 break;
-case 108:
+case 106:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,null, TIPO_OPERACION.UNARIO, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("OPERADOR", $$[$0-1]), entrada1.nodo)
@@ -1509,12 +1478,12 @@ case 108:
                 this.$ = salida
         
 break;
-case 109:
+case 107:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-1]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("OPERADOR", $$[$0-2]), entrada1.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -1525,14 +1494,48 @@ case 109:
                 this.$ = salida
         
 break;
-case 110:
+case 108:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.IGUAL, this._$.first_line, this._$.first_column+1);
+                nodo = new Nodo("EXPRESION", "EXPRESION")
+                nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
+                salida = {
+                        nodo: nodo,
+                        instruccion: instruccion
+                }
+                this.$ = salida
+        
+break;
+case 109:
+
+                //GET:  Values
+                entrada1 = $$[$0-2]
+                entrada2 = $$[$0]
+
+                //OUTPUT
+                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.DESIGUAL, this._$.first_line, this._$.first_column+1);
+                nodo = new Nodo("EXPRESION", "EXPRESION")
+                nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
+                salida = {
+                        nodo: nodo,
+                        instruccion: instruccion
+                }
+                this.$ = salida
+        
+break;
+case 110:
+
+                //GET:  Values
+                entrada1 = $$[$0-2]
+                entrada2 = $$[$0]
+
+                //OUTPUT
+                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MENOR, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
                 salida = {
@@ -1544,12 +1547,12 @@ case 110:
 break;
 case 111:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0]
 
-                //Creacion de la salida
-                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.DESIGUAL, this._$.first_line, this._$.first_column+1);
+                //OUTPUT
+                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MENORIGUAL, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
                 salida = {
@@ -1561,45 +1564,11 @@ case 111:
 break;
 case 112:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0]
 
-                //Creacion de la salida
-                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MENOR, this._$.first_line, this._$.first_column+1);
-                nodo = new Nodo("EXPRESION", "EXPRESION")
-                nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
-                salida = {
-                        nodo: nodo,
-                        instruccion: instruccion
-                }
-                this.$ = salida
-        
-break;
-case 113:
-
-                //Obtencion de valores
-                entrada1 = $$[$0-2]
-                entrada2 = $$[$0]
-
-                //Creacion de la salida
-                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MENORIGUAL, this._$.first_line, this._$.first_column+1);
-                nodo = new Nodo("EXPRESION", "EXPRESION")
-                nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
-                salida = {
-                        nodo: nodo,
-                        instruccion: instruccion
-                }
-                this.$ = salida
-        
-break;
-case 114:
-
-                //Obtencion de valores
-                entrada1 = $$[$0-2]
-                entrada2 = $$[$0]
-
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MAYOR, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
@@ -1611,14 +1580,48 @@ case 114:
                 
         
 break;
-case 115:
+case 113:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MAYORIGUAL, this._$.first_line, this._$.first_column+1);
+                nodo = new Nodo("EXPRESION", "EXPRESION")
+                nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
+                salida = {
+                        nodo: nodo,
+                        instruccion: instruccion
+                }
+                this.$ = salida
+        
+break;
+case 114:
+
+                //GET:  Values
+                entrada1 = $$[$0-2]
+                entrada2 = $$[$0]
+
+                //OUTPUT
+                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.OR, this._$.first_line, this._$.first_column+1);
+                nodo = new Nodo("EXPRESION", "EXPRESION")
+                nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
+                salida = {
+                        nodo: nodo,
+                        instruccion: instruccion
+                }
+                this.$ = salida
+        
+break;
+case 115:
+
+                //GET:  Values
+                entrada1 = $$[$0-2]
+                entrada2 = $$[$0]
+
+                //OUTPUT
+                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.AND, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
                 salida = {
@@ -1630,44 +1633,10 @@ case 115:
 break;
 case 116:
 
-                //Obtencion de valores
-                entrada1 = $$[$0-2]
-                entrada2 = $$[$0]
-
-                //Creacion de la salida
-                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.OR, this._$.first_line, this._$.first_column+1);
-                nodo = new Nodo("EXPRESION", "EXPRESION")
-                nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
-                salida = {
-                        nodo: nodo,
-                        instruccion: instruccion
-                }
-                this.$ = salida
-        
-break;
-case 117:
-
-                //Obtencion de valores
-                entrada1 = $$[$0-2]
-                entrada2 = $$[$0]
-
-                //Creacion de la salida
-                instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.AND, this._$.first_line, this._$.first_column+1);
-                nodo = new Nodo("EXPRESION", "EXPRESION")
-                nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
-                salida = {
-                        nodo: nodo,
-                        instruccion: instruccion
-                }
-                this.$ = salida
-        
-break;
-case 118:
-
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,null, TIPO_OPERACION.NOT, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("OPERADOR", $$[$0-1]), entrada1.nodo)
@@ -1678,14 +1647,14 @@ case 118:
                 this.$ = salida
         
 break;
-case 119:
+case 117:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-4]
                 entrada2 = $$[$0-2]
                 entrada3 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.ternario(entrada1.instruccion,entrada2.instruccion, entrada3.instruccion, TIPO_OPERACION.TERNARIO, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-3]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada3.nodo)
@@ -1696,9 +1665,9 @@ case 119:
                 this.$ = salida
         
 break;
-case 120:
+case 118:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor(Number($$[$0]), TIPO_VALOR.INT, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("ENTERO", $$[$0]))
@@ -1709,9 +1678,9 @@ case 120:
                 this.$ = salida
         
 break;
-case 121:
+case 119:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor(Number($$[$0]), TIPO_VALOR.DOUBLE, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("DOBLE", $$[$0]))
@@ -1722,9 +1691,9 @@ case 121:
                 this.$ = salida
         
 break;
-case 122:
+case 120:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($$[$0], TIPO_VALOR.BOOLEAN, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("BOOLEAN", $$[$0]))
@@ -1735,9 +1704,9 @@ case 122:
                 this.$ = salida
         
 break;
-case 123:
+case 121:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($$[$0], TIPO_VALOR.BOOLEAN, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("BOOLEAN", $$[$0]))
@@ -1748,9 +1717,9 @@ case 123:
                 this.$ = salida
         
 break;
-case 124:
+case 122:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($$[$0], TIPO_VALOR.STRING, this._$.first_line, this._$.first_column+1);;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("STRING", $$[$0]))
@@ -1761,9 +1730,9 @@ case 124:
                 this.$ = salida
         
 break;
-case 125:
+case 123:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($$[$0], TIPO_VALOR.CHAR, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("CHAR", $$[$0]))
@@ -1774,9 +1743,9 @@ case 125:
                 this.$ = salida
         
 break;
-case 126:
+case 124:
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($$[$0], TIPO_VALOR.IDENTIFICADOR, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("ID", $$[$0]))
@@ -1787,13 +1756,13 @@ case 126:
                 this.$ = salida
         
 break;
-case 127:
+case 125:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
                 entrada2 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.casteo(entrada1.instruccion, entrada2.instruccion, TIPO_OPERACION.CASTEO, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("OPERADOR", $$[$0-3]), entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), entrada2.nodo)
@@ -1804,12 +1773,12 @@ case 127:
                 this.$ = salida
         
 break;
-case 128:
+case 126:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion, null, TIPO_OPERACION.INCREMENTO, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -1820,12 +1789,12 @@ case 128:
                 this.$ = salida       
         
 break;
-case 129:
+case 127:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0-2]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion, null, TIPO_OPERACION.DECREMENTO, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $$[$0-1]), new Nodo("OPERADOR", $$[$0]))
@@ -1836,12 +1805,12 @@ case 129:
                 this.$ = salida         
         
 break;
-case 130:
+case 128:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada2 = $$[$0-1]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valorv($$[$0-3], entrada2.instruccion, null,  this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("ID", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada2.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -1853,13 +1822,13 @@ case 130:
 
         
 break;
-case 131:
+case 129:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada2 = $$[$0-4]
                 entrada3 = $$[$0-1]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valorv($$[$0-6], entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("ID", $$[$0-6]), new Nodo("OPERADOR", $$[$0-5]), entrada2.nodo, new Nodo("OPERADOR", $$[$0-3]), new Nodo("OPERADOR", $$[$0-2]), entrada3.nodo, new Nodo("OPERADOR", $$[$0]))
@@ -1870,12 +1839,12 @@ case 131:
                 this.$ = salida
         
 break;
-case 132:
+case 130:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo)
@@ -1887,12 +1856,12 @@ case 132:
         
         
 break;
-case 133: case 134: case 135: case 136: case 137: case 138: case 139:
+case 131: case 132: case 133: case 134: case 135: case 136: case 137:
 
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $$[$0]
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo)
@@ -1905,8 +1874,8 @@ case 133: case 134: case 135: case 136: case 137: case 138: case 139:
 break;
 }
 },
-table: [{2:$V0,3:1,4:2,6:3,7:4,8:5,9:6,10:7,11:8,13:10,18:$V1,23:11,24:12,83:$V2,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{1:[3]},{2:$V0,5:[1,20],6:21,7:4,8:5,9:6,10:7,11:8,13:10,18:$V1,23:11,24:12,83:$V2,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},o($V8,[2,3]),o($V8,[2,4]),o($V8,[2,5]),o($V8,[2,6]),o($V8,[2,7]),o($V8,[2,8]),{12:[1,22]},{14:23,18:[1,24]},o($V9,[2,17]),o($V9,[2,18]),{29:[1,25]},{18:[1,26]},o($Va,[2,90]),o($Va,[2,91]),o($Va,[2,92]),o($Va,[2,93]),o($Va,[2,94]),{1:[2,1]},o($V8,[2,2]),o($V8,[2,9]),{12:[1,28],15:[1,27],17:$Vb},o($Vc,$Vd,{21:[1,30]}),{13:34,30:[1,31],36:32,37:33,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{29:[1,35]},{16:36,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},o($V9,[2,11]),{18:[1,62]},{22:[1,63]},{31:[1,64],34:[1,65]},{17:[1,67],30:[1,66]},o($Vv,[2,35]),{18:[1,68]},{16:71,18:$Ve,29:$Vf,30:[1,69],39:70,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{12:[1,72],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{16:88,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{13:90,16:89,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:91,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},o($VL,[2,120]),o($VL,[2,121]),o($VL,[2,122]),o($VL,[2,123]),o($VL,[2,124]),o($VL,[2,125]),o($VL,[2,126],{21:[1,92],29:[1,93]}),o($VL,[2,132]),o($VL,[2,133]),o($VL,[2,134]),o($VL,[2,135]),o($VL,[2,136]),o($VL,[2,137]),o($VL,[2,138]),o($VL,[2,139]),{29:[1,94]},{29:[1,95]},{29:[1,96]},{29:[1,97]},{29:[1,98]},{29:[1,99]},{29:[1,100]},o($Vc,[2,12]),{15:[1,101],21:[1,102]},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:103,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{13:132,35:[1,131],84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{31:[1,133],34:[1,134]},{13:34,37:135,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},o($Vv,[2,36]),{12:[1,136]},{17:$VY,30:[1,137]},o($Vv,[2,89],{95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK}),o($V9,[2,10]),{16:139,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,95:[1,140],96:$Vt,109:$Vu},{16:141,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:[1,142],109:$Vu},{16:143,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:144,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:145,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:146,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:147,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:148,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:149,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:150,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:151,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:152,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:153,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:154,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:155,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},o($VZ,[2,108],{97:$Vy,98:$Vz,99:$VA,100:$VB,110:$VK}),{30:[1,156],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{30:[1,157]},o([12,17,22,30,34,107,108],[2,118],{95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,110:$VK}),{16:158,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:71,18:$Ve,29:$Vf,30:[1,159],39:160,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:161,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:162,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:163,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:164,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:165,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:166,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:167,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:170,18:$Ve,21:[1,169],25:[1,168],29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{22:[1,171]},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,33:[1,172],38:110,41:173,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},o($V_,[2,42]),o($V_,[2,43]),o($V_,[2,44]),o($V_,[2,45]),o($V_,[2,46]),o($V_,[2,47]),o($V_,[2,48]),o($V_,[2,49]),o($V_,[2,50]),o($V_,[2,51]),o($V_,[2,52]),o($V_,[2,53]),o($V_,[2,54]),o($V_,[2,55]),o($V_,[2,56]),{12:[1,174]},{15:[1,175],21:[1,176],29:[1,177]},{12:[1,178],16:179,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{29:[1,180]},{29:[1,181]},{29:[1,182]},{29:[1,183]},{12:[1,184]},{12:[1,185]},{29:[1,186]},{31:[1,187]},{29:[1,188]},{31:[1,189]},{31:[1,190]},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:191,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{13:193,35:[1,192],84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},o($Vv,[2,34]),o($V8,[2,86]),{12:[1,194]},{16:195,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},o($VZ,[2,102],{97:$Vy,98:$Vz,99:$VA,100:$VB,110:$VK}),o($VL,[2,128]),o($VZ,[2,103],{97:$Vy,98:$Vz,99:$VA,100:$VB,110:$VK}),o($VL,[2,129],{40:47,69:48,71:49,73:50,75:51,77:52,79:53,81:54,16:88,18:$Ve,29:$Vf,70:$Vg,72:$Vh,74:$Vi,76:$Vj,78:$Vk,80:$Vl,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,109:$Vu}),o($V$,[2,104],{100:$VB,110:$VK}),o($V$,[2,105],{100:$VB,110:$VK}),o($V$,[2,106],{100:$VB,110:$VK}),o($V$,[2,107],{110:$VK}),o($V01,[2,110],{95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,110:$VK}),o($V01,[2,111],{95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,110:$VK}),o($V01,[2,112],{95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,110:$VK}),o($V01,[2,113],{95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,110:$VK}),o($V01,[2,114],{95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,110:$VK}),o($V01,[2,115],{95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,110:$VK}),o([12,17,22,30,34],[2,116],{95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK}),o([12,17,22,30,34,107],[2,117],{95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,108:$VJ,110:$VK}),{34:[1,196],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},o($VL,[2,109]),{16:197,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{22:[1,198],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},o($VL,[2,39]),{17:$VY,30:[1,199]},{30:[1,200],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{30:[1,201],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{30:[1,202],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{30:[1,203],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{30:[1,204],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{30:[1,205],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{30:[1,206],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{13:207,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{18:$V11,26:208,28:209,89:$V21,90:$V31,91:$V41,92:$V51,93:$V61,94:$V71},{12:[1,217],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{15:[1,218]},o($V8,[2,28]),o($V_,[2,41]),o($V_,[2,57]),{16:219,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:220,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:71,18:$Ve,29:$Vf,30:[1,221],39:222,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},o($V_,[2,73]),{12:[1,223],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{16:224,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:225,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:226,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:227,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},o($V_,[2,75]),o($V_,[2,76]),{16:228,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:229,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{13:232,18:$V81,62:230,63:231,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:234,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:235,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,33:[1,236],38:110,41:173,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{31:[1,237]},{31:[1,238]},o($V8,[2,87]),o($Vv,[2,88],{95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK}),{16:239,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},o($VL,[2,127]),o($VL,[2,130],{21:[1,240]}),o($VL,[2,40]),o($VL,[2,79]),o($VL,[2,80]),o($VL,[2,81]),o($VL,[2,82]),o($VL,[2,83]),o($VL,[2,84]),o($VL,[2,85]),{21:[1,241]},{17:$V91,22:[1,242]},o($Va1,[2,25]),o($Va1,[2,95]),o($Va1,[2,96]),o($Va1,[2,97]),o($Va1,[2,98]),o($Va1,[2,99]),o($Va1,[2,100]),o($Va1,[2,101]),o($V9,[2,21]),{21:[1,245],25:[1,244]},{12:[1,246],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{22:[1,247],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{12:[1,248]},{17:$VY,30:[1,249]},o($V_,[2,74]),{30:[1,250],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{30:[1,251],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{30:[1,252],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{30:[1,253],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{30:[1,254],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,33:[1,255],38:110,41:173,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{12:[1,256]},{12:[1,257]},{14:258,18:[1,259]},{15:[1,260]},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,33:[1,261],38:110,41:173,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,33:[1,262],38:110,41:173,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},o($V8,[2,30]),{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:263,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:264,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},o($VL,[2,119]),{16:265,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:266,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{12:[1,267]},{18:$V11,28:268,89:$V21,90:$V31,91:$V41,92:$V51,93:$V61,94:$V71},{13:269,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{21:[1,271],27:270},o($V_,[2,14]),{15:[1,272],21:[1,273]},o($V_,[2,37]),{12:[1,274]},{12:[1,275]},{12:[1,276]},{31:[1,277]},{31:[1,278]},{31:[1,279]},{59:[1,280]},{16:281,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:282,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{15:[1,283],17:$Vb},o([15,17],$Vd),{16:284,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},o($V8,[2,29]),o($V8,[2,32]),{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,33:[1,285],38:110,41:173,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,33:[1,286],38:110,41:173,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{22:[1,287],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{22:[1,288],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},o($V9,[2,20]),o($Va1,[2,24]),{21:[1,289]},{17:[1,291],22:[1,290]},{18:$V11,26:292,28:209,89:$V21,90:$V31,91:$V41,92:$V51,93:$V61,94:$V71},{16:293,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{16:294,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},o($V_,[2,38]),o($V_,[2,77]),o($V_,[2,78]),{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:295,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{54:296,56:297,57:$Vb1},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:299,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{29:[1,300]},{12:[1,301],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{12:[1,302],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{16:303,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},o([12,30],[2,72],{95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK}),o($V8,[2,31]),o($V8,[2,33]),o($VL,[2,131]),{12:[1,304]},{16:305,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{12:[1,306]},{21:[1,307]},{17:$V91,22:[1,308]},{12:[1,309],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{22:[1,310],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,33:[1,311],38:110,41:173,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{33:[1,313],55:312,56:314,57:$Vb1,58:[1,315]},o($Vc1,[2,64]),{16:316,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,33:[1,317],38:110,41:173,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{16:318,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{18:$V81,63:319},{18:$V81,63:320},{12:[2,71],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},o($V9,[2,19]),{22:[1,321],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},o($V9,[2,23]),{18:$V11,26:322,28:209,89:$V21,90:$V31,91:$V41,92:$V51,93:$V61,94:$V71},o($Va1,[2,27]),o($V_,[2,15]),{15:[1,323]},o($V_,[2,58],{52:[1,324]}),{33:[1,325]},o($V_,[2,62]),o($Vc1,[2,63]),{34:[1,326]},{34:[1,327],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},o($V_,[2,67]),{30:[1,328],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{30:[1,329]},{30:[1,330]},{21:[1,331]},{17:$V91,22:[1,332]},{16:333,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},{31:[1,334],44:335,51:$VO},o($V_,[2,61]),{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:336,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:337,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{12:[1,338]},{31:[1,339]},{31:[1,340]},{16:341,18:$Ve,29:$Vf,40:47,69:48,70:$Vg,71:49,72:$Vh,73:50,74:$Vi,75:51,76:$Vj,77:52,78:$Vk,79:53,80:$Vl,81:54,82:$Vm,89:$Vn,90:$Vo,91:$Vp,92:$Vq,93:$Vr,94:$Vs,96:$Vt,109:$Vu},o($Va1,[2,26]),{12:[1,342],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:343,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},o($V_,[2,60]),{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,33:[2,66],38:110,41:173,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},o($Vc1,[2,65],{13:10,23:11,24:12,7:105,19:106,8:107,20:108,42:109,38:110,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,41:173,2:$VM,18:$VN,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7}),o($V_,[2,68]),{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:344,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,32:345,38:110,41:104,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{22:[1,346],95:$Vw,96:$Vx,97:$Vy,98:$Vz,99:$VA,100:$VB,101:$VC,102:$VD,103:$VE,104:$VF,105:$VG,106:$VH,107:$VI,108:$VJ,110:$VK},o($V_,[2,16]),{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,33:[1,347],38:110,41:173,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,33:[1,348],38:110,41:173,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{2:$VM,7:105,8:107,13:10,18:$VN,19:106,20:108,23:11,24:12,33:[1,349],38:110,41:173,42:109,43:111,44:112,45:113,46:114,47:115,48:116,49:117,50:118,51:$VO,53:$VP,59:$VQ,60:$VR,61:$VS,64:$VT,65:$VU,66:$VV,67:$VW,68:$VX,84:$V3,85:$V4,86:$V5,87:$V6,88:$V7},{12:[1,350]},o($V_,[2,59]),o($V_,[2,69]),o($V_,[2,70]),o($V9,[2,22])],
-defaultActions: {20:[2,1]},
+table: [{2:$V0,3:1,4:2,6:3,7:4,8:5,9:6,10:7,11:8,13:10,18:$V1,23:11,24:12,29:$V2,83:$V3,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{1:[3]},{2:$V0,5:[1,21],6:22,7:4,8:5,9:6,10:7,11:8,13:10,18:$V1,23:11,24:12,29:$V2,83:$V3,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},o($V9,[2,3]),o($V9,[2,4]),o($V9,[2,5]),o($V9,[2,6]),o($V9,[2,7]),o($V9,[2,8]),{12:[1,23]},{14:24,18:[1,25]},o($Va,[2,17]),o($Va,[2,18]),{18:[1,26]},{30:[1,27]},{18:[1,28]},o($Vb,[2,88]),o($Vb,[2,89]),o($Vb,[2,90]),o($Vb,[2,91]),o($Vb,[2,92]),{1:[2,1]},o($V9,[2,2]),o($V9,[2,9]),{12:[1,30],15:[1,29],17:$Vc},o($Vd,$Ve,{21:$Vf,30:[1,32]}),{30:[1,34]},{13:37,35:35,37:36,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{30:[1,38]},{16:39,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},o($Va,[2,11]),{18:[1,65]},{31:[1,66]},{22:[1,67]},{13:37,31:[1,68],35:69,37:36,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{17:$Vx,31:[1,70]},o($Vy,[2,33]),{18:[1,72]},{16:75,18:$Vg,30:$Vh,31:[1,73],39:74,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{12:[1,76],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{16:92,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{13:94,16:93,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:95,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},o($VO,[2,118]),o($VO,[2,119]),o($VO,[2,120]),o($VO,[2,121]),o($VO,[2,122]),o($VO,[2,123]),o($VO,[2,124],{21:[1,96],30:[1,97]}),o($VO,[2,130]),o($VO,[2,131]),o($VO,[2,132]),o($VO,[2,133]),o($VO,[2,134]),o($VO,[2,135]),o($VO,[2,136]),o($VO,[2,137]),{30:[1,98]},{30:[1,99]},{30:[1,100]},{30:[1,101]},{30:[1,102]},{30:[1,103]},{30:[1,104]},o($Vd,[2,12]),{32:[1,105]},{15:[1,106],21:[1,107]},{32:[1,108]},{17:$Vx,31:[1,109]},{36:[1,110]},{13:37,37:111,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},o($Vy,[2,34]),{12:[1,112]},{17:$VP,31:[1,113]},o($Vy,[2,87],{95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN}),o($Va,[2,10]),{16:115,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,95:[1,116],96:$Vv,109:$Vw},{16:117,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:[1,118],109:$Vw},{16:119,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:120,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:121,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:122,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:123,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:124,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:125,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:126,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:127,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:128,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:129,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:130,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:131,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},o($VQ,[2,106],{97:$VB,98:$VC,99:$VD,100:$VE,110:$VN}),{31:[1,132],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{31:[1,133]},o([12,17,22,31,36,107,108],[2,116],{95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,110:$VN}),{16:134,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:75,18:$Vg,30:$Vh,31:[1,135],39:136,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:137,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:138,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:139,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:140,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:141,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:142,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:143,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,33:144,38:151,41:145,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{16:175,18:$Vg,21:[1,174],25:[1,173],30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{22:[1,176]},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,33:177,38:151,41:145,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{32:[1,178]},{13:179,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},o($Vy,[2,32]),o($V9,[2,84]),{12:[1,180]},{16:181,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},o($VQ,[2,100],{97:$VB,98:$VC,99:$VD,100:$VE,110:$VN}),o($VO,[2,126]),o($VQ,[2,101],{97:$VB,98:$VC,99:$VD,100:$VE,110:$VN}),o($VO,[2,127],{40:50,69:51,71:52,73:53,75:54,77:55,79:56,81:57,16:92,18:$Vg,30:$Vh,70:$Vi,72:$Vj,74:$Vk,76:$Vl,78:$Vm,80:$Vn,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,109:$Vw}),o($V11,[2,102],{100:$VE,110:$VN}),o($V11,[2,103],{100:$VE,110:$VN}),o($V11,[2,104],{100:$VE,110:$VN}),o($V11,[2,105],{110:$VN}),o($V21,[2,108],{95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,110:$VN}),o($V21,[2,109],{95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,110:$VN}),o($V21,[2,110],{95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,110:$VN}),o($V21,[2,111],{95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,110:$VN}),o($V21,[2,112],{95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,110:$VN}),o($V21,[2,113],{95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,110:$VN}),o([12,17,22,31,36],[2,114],{95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN}),o([12,17,22,31,36,107],[2,115],{95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,108:$VM,110:$VN}),{36:[1,182],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},o($VO,[2,107]),{16:183,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{22:[1,184],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},o($VO,[2,37]),{17:$VP,31:[1,185]},{31:[1,186],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{31:[1,187],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{31:[1,188],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{31:[1,189],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{31:[1,190],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{31:[1,191],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{31:[1,192],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,34:[1,193],38:151,41:194,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},o($V31,[2,40]),o($V31,[2,41]),o($V31,[2,42]),o($V31,[2,43]),o($V31,[2,44]),o($V31,[2,45]),o($V31,[2,46]),o($V31,[2,47]),o($V31,[2,48]),o($V31,[2,49]),o($V31,[2,50]),o($V31,[2,51]),o($V31,[2,52]),o($V31,[2,53]),o($V31,[2,54]),{12:[1,195]},{14:24,18:[1,196]},{15:[1,197],21:[1,198],30:[1,199]},{12:[1,200],16:201,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{30:[1,202]},{30:[1,203]},{30:[1,204]},{30:[1,205]},{12:[1,206]},{12:[1,207]},{30:[1,208]},{32:[1,209]},{30:[1,210]},{13:211,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{18:$V41,26:212,28:213,89:$V51,90:$V61,91:$V71,92:$V81,93:$V91,94:$Va1},{12:[1,221],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{15:[1,222]},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,34:[1,223],38:151,41:194,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,33:224,38:151,41:145,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{32:[1,225]},o($V9,[2,85]),o($Vy,[2,86],{95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN}),{16:226,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},o($VO,[2,125]),o($VO,[2,128],{21:[1,227]}),o($VO,[2,38]),o($VO,[2,77]),o($VO,[2,78]),o($VO,[2,79]),o($VO,[2,80]),o($VO,[2,81]),o($VO,[2,82]),o($VO,[2,83]),o($V9,[2,30]),o($V31,[2,39]),o($V31,[2,55]),o($Vd,$Ve,{21:$Vf}),{16:228,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:229,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:75,18:$Vg,30:$Vh,31:[1,230],39:231,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},o($V31,[2,71]),{12:[1,232],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{16:233,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:234,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:235,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:236,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},o($V31,[2,73]),o($V31,[2,74]),{16:237,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,33:238,38:151,41:145,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{13:241,18:$Vb1,62:239,63:240,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{21:[1,243]},{17:$Vc1,22:[1,244]},o($Vd1,[2,25]),o($Vd1,[2,93]),o($Vd1,[2,94]),o($Vd1,[2,95]),o($Vd1,[2,96]),o($Vd1,[2,97]),o($Vd1,[2,98]),o($Vd1,[2,99]),o($Va,[2,21]),{21:[1,247],25:[1,246]},o($V9,[2,28]),{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,34:[1,248],38:151,41:194,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,33:249,38:151,41:145,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},o($VO,[2,117]),{16:250,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{12:[1,251],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{22:[1,252],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{12:[1,253]},{17:$VP,31:[1,254]},o($V31,[2,72]),{31:[1,255],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{31:[1,256],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{31:[1,257],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{31:[1,258],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{31:[1,259],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,34:[1,260],38:151,41:194,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{12:[1,261]},{12:[1,262]},{14:263,18:[1,264]},{15:[1,265]},{16:266,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{12:[1,267]},{18:$V41,28:268,89:$V51,90:$V61,91:$V71,92:$V81,93:$V91,94:$Va1},{13:269,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{21:[1,271],27:270},o($V9,[2,29]),{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,34:[1,272],38:151,41:194,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{22:[1,273],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},o($V31,[2,14]),{15:[1,274],21:[1,275]},o($V31,[2,35]),{12:[1,276]},{12:[1,277]},{12:[1,278]},{32:[1,279]},{32:[1,280]},{32:[1,281]},{59:[1,282]},{16:283,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:284,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{15:[1,285],17:$Vc},o([15,17],$Ve),{16:286,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{22:[1,287],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},o($Va,[2,20]),o($Vd1,[2,24]),{21:[1,288]},{17:[1,290],22:[1,289]},{18:$V41,26:291,28:213,89:$V51,90:$V61,91:$V71,92:$V81,93:$V91,94:$Va1},{13:292,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},o($VO,[2,129]),{16:293,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{16:294,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},o($V31,[2,36]),o($V31,[2,75]),o($V31,[2,76]),{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,33:295,38:151,41:145,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{54:296,56:297,57:$Ve1},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,33:299,38:151,41:145,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{30:[1,300]},{12:[1,301],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{12:[1,302],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{16:303,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},o([12,31],[2,70],{95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN}),{12:[1,304]},{16:305,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{12:[1,306]},{21:[1,307]},{17:$Vc1,22:[1,308]},{18:[1,309]},{12:[1,310],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{22:[1,311],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,34:[1,312],38:151,41:194,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{34:[1,314],55:313,56:315,57:$Ve1,58:[1,316]},o($Vf1,[2,62]),{16:317,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,34:[1,318],38:151,41:194,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{16:319,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{18:$Vb1,63:320},{18:$Vb1,63:321},{12:[2,69],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},o($Va,[2,19]),{22:[1,322],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},o($Va,[2,23]),{18:$V41,26:323,28:213,89:$V51,90:$V61,91:$V71,92:$V81,93:$V91,94:$Va1},o($Vd1,[2,27]),{30:[1,324]},o($V31,[2,15]),{15:[1,325]},o($V31,[2,56],{52:[1,326]}),{34:[1,327]},o($V31,[2,60]),o($Vf1,[2,61]),{36:[1,328]},{36:[1,329],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},o($V31,[2,65]),{31:[1,330],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{31:[1,331]},{31:[1,332]},{21:[1,333]},{17:$Vc1,22:[1,334]},{13:37,35:335,37:36,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{16:336,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},{32:[1,337],44:338,51:$VT},o($V31,[2,59]),{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,33:339,38:151,41:145,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,33:340,38:151,41:145,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{12:[1,341]},{32:[1,342]},{32:[1,343]},{16:344,18:$Vg,30:$Vh,40:50,69:51,70:$Vi,71:52,72:$Vj,73:53,74:$Vk,75:54,76:$Vl,77:55,78:$Vm,79:56,80:$Vn,81:57,82:$Vo,89:$Vp,90:$Vq,91:$Vr,92:$Vs,93:$Vt,94:$Vu,96:$Vv,109:$Vw},o($Vd1,[2,26]),{17:$Vx,31:[1,345]},{12:[1,346],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,33:347,38:151,41:145,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},o($V31,[2,58]),{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,34:[2,64],38:151,41:194,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},o($Vf1,[2,63],{23:11,24:12,7:146,19:147,8:148,20:149,42:150,38:151,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,13:161,41:194,2:$VR,18:$VS,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8}),o($V31,[2,66]),{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,33:348,38:151,41:145,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,33:349,38:151,41:145,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{22:[1,350],95:$Vz,96:$VA,97:$VB,98:$VC,99:$VD,100:$VE,101:$VF,102:$VG,103:$VH,104:$VI,105:$VJ,106:$VK,107:$VL,108:$VM,110:$VN},{32:[1,351]},o($V31,[2,16]),{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,34:[1,352],38:151,41:194,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,34:[1,353],38:151,41:194,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,34:[1,354],38:151,41:194,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},{12:[1,355]},{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,33:356,38:151,41:145,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},o($V31,[2,57]),o($V31,[2,67]),o($V31,[2,68]),o($Va,[2,22]),{2:$VR,7:146,8:148,13:161,18:$VS,19:147,20:149,23:11,24:12,34:[1,357],38:151,41:194,42:150,43:152,44:153,45:154,46:155,47:156,48:157,49:158,50:159,51:$VT,53:$VU,59:$VV,60:$VW,61:$VX,64:$VY,65:$VZ,66:$V_,67:$V$,68:$V01,84:$V4,85:$V5,86:$V6,87:$V7,88:$V8},o($V9,[2,31])],
+defaultActions: {21:[2,1]},
 parseError: function parseError (str, hash) {
     if (hash.recoverable) {
         this.trace(str);
@@ -2156,14 +2125,14 @@ _handle_error:
 }};
 
         //Importes
-        var ListaErrores = require("./recursos/errores/ListaErrores");
-        var ListaSimbolos = require("./recursos/datos/ListaSimbolos");
-        var ListaMetodos = require("./recursos/datos/ListaMetodos");
-        const Nodo = require('./recursos/AST/NodoAST');
-        const TIPO_OPERACION = require('./recursos/enum/TipoOperacion');
-        const TIPO_VALOR = require('./recursos/enum/TipoValor');
-        const TIPO_DATO = require('./recursos/enum/TipoDato');
-        const INSTRUCCION = require('./recursos/instruccion/Instruccion');
+        var ListaErrores = require("./Bases-TW/Errors/ListaErrores");
+        var ListaSimbolos = require("./Bases-TW/Models/ListaSimbolos");
+        var ListaMetodos = require("./Bases-TW/Models/ListaMetodos");
+        const Nodo = require('./Bases-TW/AST/NodoAST');
+        const TIPO_OPERACION = require('./Bases-TW/Reserved/TipoOperacion');
+        const TIPO_VALOR = require('./Bases-TW/Reserved/TipoValor');
+        const TIPO_DATO = require('./Bases-TW/Reserved/TipoDato');
+        const INSTRUCCION = require('./Bases-TW/Instruction/Instruccion');
 
         //Instrucciones
         var lista = new ListaErrores();
@@ -2527,7 +2496,7 @@ case 9:return 92;
 break;
 case 10:return 25;
 break;
-case 11:return 35;
+case 11:return 29;
 break;
 case 12:return 67;
 break;
@@ -2597,7 +2566,7 @@ case 44:return 105;
 break;
 case 45:return 15;
 break;
-case 46:return 34;
+case 46:return 36;
 break;
 case 47:return 110;
 break;
@@ -2607,17 +2576,17 @@ case 49:return 108;
 break;
 case 50:return 109;
 break;
-case 51:return 29;
+case 51:return 30;
 break;
-case 52:return 30;
+case 52:return 31;
 break;
 case 53:return 21;
 break;
 case 54:return 22;
 break;
-case 55:return 31;
+case 55:return 32;
 break;
-case 56:return 33; 
+case 56:return 34; 
 break;
 case 57:return 12;
 break;
@@ -2658,7 +2627,7 @@ case 73:
 break;
 }
 },
-rules: [/^(?:\s+)/i,/^(?:\/\/.*)/i,/^(?:\/\*([^"!>"]|[\r|\f|\s|\t|\n])*\*\/)/i,/^(?:int\b)/i,/^(?:double\b)/i,/^(?:boolean\b)/i,/^(?:char\b)/i,/^(?:string\b)/i,/^(?:true\b)/i,/^(?:false\b)/i,/^(?:new\b)/i,/^(?:void\b)/i,/^(?:print\b)/i,/^(?:println\b)/i,/^(?:return\b)/i,/^(?:toLower\b)/i,/^(?:toUpper\b)/i,/^(?:round\b)/i,/^(?:length\b)/i,/^(?:typeof\b)/i,/^(?:tostring\b)/i,/^(?:tochararray\b)/i,/^(?:run\b)/i,/^(?:if\b)/i,/^(?:else\b)/i,/^(?:switch\b)/i,/^(?:case\b)/i,/^(?:default\b)/i,/^(?:break\b)/i,/^(?:for\b)/i,/^(?:while\b)/i,/^(?:do\b)/i,/^(?:continue\b)/i,/^(?:\+)/i,/^(?:-)/i,/^(?:\*)/i,/^(?:\/)/i,/^(?:\^)/i,/^(?:%)/i,/^(?:==)/i,/^(?:!=)/i,/^(?:<=)/i,/^(?:>=)/i,/^(?:<)/i,/^(?:>)/i,/^(?:=)/i,/^(?::)/i,/^(?:\?)/i,/^(?:\|\|)/i,/^(?:&&)/i,/^(?:!)/i,/^(?:\()/i,/^(?:\))/i,/^(?:\[)/i,/^(?:\])/i,/^(?:\{)/i,/^(?:\})/i,/^(?:;)/i,/^(?:,)/i,/^(?:["])/i,/^(?:[^"\\]+)/i,/^(?:\\")/i,/^(?:\\n)/i,/^(?:\s)/i,/^(?:\\t)/i,/^(?:\\\\)/i,/^(?:\\\\')/i,/^(?:["])/i,/^(?:'(\\n|\\\\|\\t|\\r|\\'|\\"|.)')/i,/^(?:[0-9]+(\.[0-9]+)\b)/i,/^(?:[0-9]+\b)/i,/^(?:([a-zA-Z_])([a-zA-Z0-9_])*)/i,/^(?:$)/i,/^(?:.)/i],
+rules: [/^(?:\s+)/i,/^(?:\/\/.*)/i,/^(?:\/\*([^"!>"]|[\r|\f|\s|\t|\n])*\*\/)/i,/^(?:int\b)/i,/^(?:double\b)/i,/^(?:boolean\b)/i,/^(?:char\b)/i,/^(?:string\b)/i,/^(?:true\b)/i,/^(?:false\b)/i,/^(?:new\b)/i,/^(?:void\b)/i,/^(?:print\b)/i,/^(?:println\b)/i,/^(?:return\b)/i,/^(?:toLower\b)/i,/^(?:toUpper\b)/i,/^(?:round\b)/i,/^(?:length\b)/i,/^(?:typeof\b)/i,/^(?:tostring\b)/i,/^(?:tochararray\b)/i,/^(?:main\b)/i,/^(?:if\b)/i,/^(?:else\b)/i,/^(?:switch\b)/i,/^(?:case\b)/i,/^(?:default\b)/i,/^(?:break\b)/i,/^(?:for\b)/i,/^(?:while\b)/i,/^(?:do\b)/i,/^(?:continue\b)/i,/^(?:\+)/i,/^(?:-)/i,/^(?:\*)/i,/^(?:\/)/i,/^(?:\^)/i,/^(?:%)/i,/^(?:==)/i,/^(?:!=)/i,/^(?:<=)/i,/^(?:>=)/i,/^(?:<)/i,/^(?:>)/i,/^(?:=)/i,/^(?::)/i,/^(?:\?)/i,/^(?:\|\|)/i,/^(?:&&)/i,/^(?:!)/i,/^(?:\()/i,/^(?:\))/i,/^(?:\[)/i,/^(?:\])/i,/^(?:\{)/i,/^(?:\})/i,/^(?:;)/i,/^(?:,)/i,/^(?:["])/i,/^(?:[^"\\]+)/i,/^(?:\\")/i,/^(?:\\n)/i,/^(?:\s)/i,/^(?:\\t)/i,/^(?:\\\\)/i,/^(?:\\\\')/i,/^(?:["])/i,/^(?:'(\\n|\\\\|\\t|\\r|\\'|\\"|.)')/i,/^(?:[0-9]+(\.[0-9]+))/i,/^(?:[0-9]+)/i,/^(?:([a-zA-Z_])([a-zA-Z0-9_])*)/i,/^(?:$)/i,/^(?:.)/i],
 conditions: {"string":{"rules":[60,61,62,63,64,65,66,67],"inclusive":false},"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,68,69,70,71,72,73],"inclusive":true}}
 });
 return lexer;

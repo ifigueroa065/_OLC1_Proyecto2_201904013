@@ -31,7 +31,7 @@
 "typeof"                    return 'typeof';
 "tostring"                  return 'tostring';
 "tochararray"               return 'tochar';
-"run"                       return 'run';
+"main"                       return 'run';
 "if"                        return 'if';
 "else"                      return 'else';
 "switch"                    return 'switch';
@@ -104,14 +104,14 @@
 
 %{
         //Importes
-        var ListaErrores = require("./recursos/errores/ListaErrores");
-        var ListaSimbolos = require("./recursos/datos/ListaSimbolos");
-        var ListaMetodos = require("./recursos/datos/ListaMetodos");
-        const Nodo = require('./recursos/AST/NodoAST');
-        const TIPO_OPERACION = require('./recursos/enum/TipoOperacion');
-        const TIPO_VALOR = require('./recursos/enum/TipoValor');
-        const TIPO_DATO = require('./recursos/enum/TipoDato');
-        const INSTRUCCION = require('./recursos/instruccion/Instruccion');
+        var ListaErrores = require("./Bases-TW/Errors/ListaErrores");
+        var ListaSimbolos = require("./Bases-TW/Models/ListaSimbolos");
+        var ListaMetodos = require("./Bases-TW/Models/ListaMetodos");
+        const Nodo = require('./Bases-TW/AST/NodoAST');
+        const TIPO_OPERACION = require('./Bases-TW/Reserved/TipoOperacion');
+        const TIPO_VALOR = require('./Bases-TW/Reserved/TipoValor');
+        const TIPO_DATO = require('./Bases-TW/Reserved/TipoDato');
+        const INSTRUCCION = require('./Bases-TW/Instruction/Instruccion');
 
         //Instrucciones
         var lista = new ListaErrores();
@@ -166,10 +166,10 @@ INICIO: SENTENCIAS EOF
 
 SENTENCIAS: SENTENCIAS SENTENCIA
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $2
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push(entrada2.instruccion)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -184,10 +184,10 @@ SENTENCIAS: SENTENCIAS SENTENCIA
 
         | SENTENCIA
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("SENTENCIAS", "SENTENCIAS")
                 nodo.add(entrada1.nodo)
@@ -203,10 +203,10 @@ SENTENCIAS: SENTENCIAS SENTENCIA
 
 SENTENCIA: DVARIABLES
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("SENTENCIA", "SENTENCIA")
                 nodo.add(entrada1.nodo)
@@ -218,10 +218,10 @@ SENTENCIA: DVARIABLES
         }
         | DARREGLOS
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("SENTENCIA", "SENTENCIA")
                 nodo.add(entrada1.nodo)
@@ -233,10 +233,10 @@ SENTENCIA: DVARIABLES
         }
         | DMETODO
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("SENTENCIA", "SENTENCIA")
                 nodo.add(entrada1.nodo)
@@ -248,10 +248,10 @@ SENTENCIA: DVARIABLES
         }
         | DFUNCION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("SENTENCIA", "SENTENCIA")
                 nodo.add(entrada1.nodo)
@@ -263,10 +263,10 @@ SENTENCIA: DVARIABLES
         }
         | RUN
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("SENTENCIA", "SENTENCIA")
                 nodo.add(entrada1.nodo)
@@ -282,15 +282,15 @@ SENTENCIA: DVARIABLES
         }
 ;
 
-//Declaracion de Variables ----------------------------------------------------------------------
+                                //? Declaracion de Variables
 
 DVARIABLES: TIPO LISTAID asignar EXPRESION puntocoma
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $2
                 entrada3 = $4
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaracionv(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEC VARIABLES", "DEC VARIABLES")
                 nodo.add(entrada1.nodo, entrada2.nodo ,new Nodo("OPERADOR", $3), entrada3.nodo, new Nodo("OPERADOR", $5))
@@ -302,10 +302,10 @@ DVARIABLES: TIPO LISTAID asignar EXPRESION puntocoma
         }
         | TIPO LISTAID puntocoma
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $2
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaracionv(entrada1.instruccion, entrada2.instruccion, null, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("DEC VARIABLES", "DEC VARIABLES")
                 nodo.add(entrada1.nodo, entrada2.nodo ,new Nodo("OPERADOR", $3))
@@ -319,9 +319,9 @@ DVARIABLES: TIPO LISTAID asignar EXPRESION puntocoma
 
 LISTAID:  LISTAID coma identificador
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push($3)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -335,7 +335,7 @@ LISTAID:  LISTAID coma identificador
 
         | identificador 
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [$1]
                 nodo = new Nodo("LISTA ID", "LISTA ID")
                 nodo.add(new Nodo("ID", $1))
@@ -347,13 +347,14 @@ LISTAID:  LISTAID coma identificador
         }
 
 ;
-//Asignacion de Valores-------------------------------------------------------------------
+                                //! Asignacion de valores
+
 AVARIABLES: identificador asignar EXPRESION puntocoma
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
                 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.asignacionv($1,entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("ASI VARIABLES", "ASI VARIABLES")
                 nodo.add(new Nodo("ID", $1),new Nodo("OPERADOR", $2),  entrada1.nodo, new Nodo("OPERADOR", $4))
@@ -366,14 +367,15 @@ AVARIABLES: identificador asignar EXPRESION puntocoma
         }
 ;
 
-//Asignacion de Arreglos-------------------------------------------------------------------
+                                //* Asignacion de ARREGLOS
+
 AARREGLOS: identificador corA EXPRESION corC asignar EXPRESION puntocoma
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
                 entrada2 = $6
                 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.asignarv($1, entrada1.instruccion, null, entrada2.instruccion,  this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("ASI UNIDIMENSIONAL", "ASI UNIDIMENSIONAL")
                 nodo.add(new Nodo("ID", $1),new Nodo("OPERADOR", $2),  entrada1.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5),  entrada2.nodo, new Nodo("OPERADOR", $7))
@@ -385,12 +387,12 @@ AARREGLOS: identificador corA EXPRESION corC asignar EXPRESION puntocoma
         }
         | identificador corA EXPRESION corC corA EXPRESION corC asignar EXPRESION puntocoma
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
                 entrada2 = $6
                 entrada3 = $9
                 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion =  INSTRUCCION.asignarv($1, entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("ASI BIDIMENSIONAL", "ASI BIDIMENSIONAL")
                 nodo.add(new Nodo("OPERADOR", $1),new Nodo("OPERADOR", $2),  entrada1.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5),  entrada2.nodo, new Nodo("OPERADOR", $7))
@@ -402,13 +404,15 @@ AARREGLOS: identificador corA EXPRESION corC asignar EXPRESION puntocoma
 
         }
 ;
-//Declaracion de Arreglos -----------------------------------------------------------------------------
+
+                                //* Declaracion de Arreglos
+        
 DARREGLOS: UDIMENSION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("DEC ARREGLOS", "DEC ARREGLOS")
                 nodo.add(entrada1.nodo)
@@ -421,10 +425,10 @@ DARREGLOS: UDIMENSION
         }
         | BDIMENSION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("DEC ARREGLOS", "DEC ARREGLOS")
                 nodo.add(entrada1.nodo)
@@ -439,11 +443,11 @@ DARREGLOS: UDIMENSION
 
 UDIMENSION: TIPO identificador corA corC asignar new TIPO corA EXPRESION corC puntocoma
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $7
                 entrada3 = $9
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaraciona1(entrada1.instruccion, $2, entrada2.instruccion, entrada3.instruccion, null,this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEC UNIDIMENSIONAL", "DEC UNIDIMENSIONAL")
                 nodo.add(entrada1.nodo, new Nodo("ID", $2),new Nodo("OPERADOR", $3), new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5),  new Nodo("OPERADOR", $6), entrada2.nodo ,new Nodo("OPERADOR", $8), entrada3.nodo, new Nodo("OPERADOR", $10), new Nodo("OPERADOR", $11))
@@ -455,10 +459,10 @@ UDIMENSION: TIPO identificador corA corC asignar new TIPO corA EXPRESION corC pu
         }
         | TIPO identificador corA corC asignar corA LISTAVALORES corC puntocoma
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $7
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaraciona2(1, entrada1.instruccion, $2, entrada2.instruccion, null, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("DEC UNIDIMENSIONAL", "DEC UNIDIMENSIONAL")
                 nodo.add(entrada1.nodo, new Nodo("ID", $2),new Nodo("OPERADOR", $3), new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5),  new Nodo("OPERADOR", $6), entrada2.nodo ,new Nodo("OPERADOR", $8), new Nodo("OPERADOR", $9))
@@ -471,10 +475,10 @@ UDIMENSION: TIPO identificador corA corC asignar new TIPO corA EXPRESION corC pu
         }
         | TIPO identificador corA corC asignar EXPRESION puntocoma
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $6
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaraciona3(1, entrada1.instruccion, $2, entrada1.instruccion, null, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("DEC UNIDIMENSIONAL", "DEC UNIDIMENSIONAL")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2),new Nodo("OPERADOR", $3), new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5),  entrada2.nodo ,new Nodo("OPERADOR", $7))
@@ -488,12 +492,12 @@ UDIMENSION: TIPO identificador corA corC asignar new TIPO corA EXPRESION corC pu
 
 BDIMENSION: TIPO identificador corA corC corA corC asignar new TIPO corA EXPRESION corC corA EXPRESION corC puntocoma
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $9
                 entrada3 = $11
                 entrada4 = $14
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaraciona1(entrada1.instruccion, $2, entrada2.instruccion, entrada3.instruccion, entrada4.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEC BIDIMENSIONAL", "DEC BIDIMENSIONAL")
                 nodo.add(entrada1.nodo, new Nodo("ID", $2),new Nodo("OPERADOR", $3), new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5),  new Nodo("OPERADOR", $6), new Nodo("OPERADOR", $7),new Nodo("OPERADOR", $8), entrada2.nodo, new Nodo("OPERADOR", $10), entrada3.nodo, new Nodo("OPERADOR", $12), new Nodo("OPERADOR", $13), entrada4.nodo, new Nodo("OPERADOR", $15), new Nodo("OPERADOR", $16))
@@ -506,10 +510,10 @@ BDIMENSION: TIPO identificador corA corC corA corC asignar new TIPO corA EXPRESI
         }
         | TIPO identificador corA corC corA corC asignar corA VALORES corC puntocoma
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $9
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaraciona2(2, entrada1.instruccion, $2, entrada2.instruccion, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("DEC BIDIMENSIONAL", "DEC BIDIMENSIONAL")
                 nodo.add(entrada1.nodo, new Nodo("ID", $2),new Nodo("OPERADOR", $3), new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5),  new Nodo("OPERADOR", $6), new Nodo("OPERADOR", $7),new Nodo("OPERADOR", $8), entrada2.nodo, new Nodo("OPERADOR", $10), new Nodo("OPERADOR", $11))
@@ -525,10 +529,10 @@ BDIMENSION: TIPO identificador corA corC corA corC asignar new TIPO corA EXPRESI
 
 LISTAVALORES: LISTAVALORES coma PRIMITIVO
         {
-                 //Obtencion de valores
+                 //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push(entrada2.instruccion)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -541,10 +545,10 @@ LISTAVALORES: LISTAVALORES coma PRIMITIVO
         }
         | PRIMITIVO
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("LISTAVALORES", "LISTAVALORES")
                 nodo.add(entrada1.nodo)
@@ -558,10 +562,10 @@ LISTAVALORES: LISTAVALORES coma PRIMITIVO
 
 VALORES: VALORES coma corA LISTAVALORES corC
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $4
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push(entrada2.instruccion)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -574,10 +578,10 @@ VALORES: VALORES coma corA LISTAVALORES corC
         }
         | corA LISTAVALORES corC
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $2
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("VALORES", "VALORES")
                 nodo.add(entrada1.nodo)
@@ -588,15 +592,17 @@ VALORES: VALORES coma corA LISTAVALORES corC
                 $$ = salida
         }
 ;
-//Declarar Metodos----------------------------------------------------------------------------
-DMETODO: identificador parA parC llavA INSTRUCCIONES llavC 
+
+                                //* Declaración de Métodos
+
+DMETODO: void identificador parA parC llavA INSTRUCCIONES llavC 
         {
-                //Obtencion de valores
-                entrada2 = $5
-                //Creacion de la salida
-                instruccion = INSTRUCCION.dmetodo($1, null, entrada2.instruccion, this._$.first_line, this._$.first_column+1)
+                //GET:  Values
+                entrada2 = $6
+                //OUTPUT
+                instruccion = INSTRUCCION.dmetodo($2, null, entrada2.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEC METODO", "DEC METODO")
-                nodo.add(new Nodo("ID", $1), new Nodo("OPERADOR", $2), new Nodo("OPERADOR", $3), new Nodo("OPERADOR", $4), entrada2.nodo, new Nodo("OPERADOR", $6))
+                nodo.add(new Nodo("ID", $2), new Nodo("OPERADOR", $3), new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5), entrada2.nodo, new Nodo("OPERADOR", $7))
                 salida = {
                         nodo: nodo,
                         instruccion: instruccion
@@ -604,62 +610,36 @@ DMETODO: identificador parA parC llavA INSTRUCCIONES llavC
                 $$ = salida
         
         }
-        |identificador parA parC dospuntos void llavA INSTRUCCIONES llavC
+        
+        |void identificador parA PARAMETROS parC llavA INSTRUCCIONES llavC 
         {
-                //Obtencion de valores
-                entrada2 = $7
-                //Creacion de la salida
-                instruccion = INSTRUCCION.dmetodo($1, null, entrada2.instruccion, this._$.first_line, this._$.first_column+1)
+                //GET:  Values
+                entrada2 = $4
+                entrada3 = $7
+                //OUTPUT
+                instruccion = INSTRUCCION.dmetodo($2, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEC METODO", "DEC METODO")
-                nodo.add(new Nodo("ID", $1), new Nodo("OPERADOR", $2), new Nodo("OPERADOR", $3), new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5), new Nodo("OPERADOR", $6), entrada2.nodo, new Nodo("OPERADOR", $8))
+                nodo.add(new Nodo("ID", $2), new Nodo("OPERADOR", $3), entrada2.nodo, new Nodo("OPERADOR", $5), new Nodo("OPERADOR", $6), entrada3.nodo, new Nodo("OPERADOR", $8))
                 salida = {
                         nodo: nodo,
                         instruccion: instruccion
                 }
                 $$ = salida
         }
-        | identificador parA PARAMETROS parC llavA INSTRUCCIONES llavC 
-        {
-                //Obtencion de valores
-                entrada2 = $3
-                entrada3 = $6
-                //Creacion de la salida
-                instruccion = INSTRUCCION.dmetodo($1, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
-                nodo = new Nodo("DEC METODO", "DEC METODO")
-                nodo.add(new Nodo("ID", $1), new Nodo("OPERADOR", $2), entrada2.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5), entrada3.nodo, new Nodo("OPERADOR", $7))
-                salida = {
-                        nodo: nodo,
-                        instruccion: instruccion
-                }
-                $$ = salida
-        }
-        |identificador parA PARAMETROS parC dospuntos void llavA INSTRUCCIONES llavC
-        {
-                //Obtencion de valores
-                entrada2 = $3
-                entrada3 = $8
-                //Creacion de la salida
-                instruccion = INSTRUCCION.dmetodo($1, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
-                nodo = new Nodo("DEC METODO", "DEC METODO")
-                nodo.add(new Nodo("ID", $1), new Nodo("OPERADOR", $2), entrada2.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5), new Nodo("OPERADOR", $6),new Nodo("OPERADOR", $7), entrada3.nodo, new Nodo("OPERADOR", $9))
-                salida = {
-                        nodo: nodo,
-                        instruccion: instruccion
-                }
-                $$ = salida
-        }
+        
 ;
 
-//Declarar Funciones----------------------------------------------------------------------------
-DFUNCION: identificador parA parC dospuntos TIPO llavA INSTRUCCIONES llavC
+                                //* Declaración de Funciones
+
+DFUNCION:TIPO identificador parA parC llavA INSTRUCCIONES llavC
         {
-                //Obtencion de valores
-                entrada2 = $5
-                entrada3 = $7
-                //Creacion de la salida
-                instruccion = INSTRUCCION.dfuncion($1, null, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
+                //GET:  Values
+                entrada2 = $1
+                entrada3 = $6
+                //OUTPUT
+                instruccion = INSTRUCCION.dfuncion($2, null, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEC FUNCION", "DEC FUNCION")
-                nodo.add(new Nodo("ID", $1), new Nodo("OPERADOR", $2), new Nodo("OPERADOR", $3), new Nodo("OPERADOR", $4), entrada2.nodo, new Nodo("OPERADOR", $6), entrada3.nodo,  new Nodo("OPERADOR", $8))
+                nodo.add(new Nodo("ID", $2), new Nodo("OPERADOR", $3), new Nodo("OPERADOR", $4), entrada2.nodo, new Nodo("OPERADOR", $5), entrada3.nodo,  new Nodo("OPERADOR", $7))
                 salida = {
                         nodo: nodo,
                         instruccion: instruccion
@@ -668,15 +648,16 @@ DFUNCION: identificador parA parC dospuntos TIPO llavA INSTRUCCIONES llavC
                 
         }
         |identificador parA PARAMETROS parC dospuntos TIPO llavA INSTRUCCIONES llavC
+        TIPO identificador parA PARAMETROS parC llavA INSTRUCCIONES llavC
         {
-                //Obtencion de valores
-                entrada2 = $3
-                entrada3 = $6
-                entrada4 = $8
-                //Creacion de la salida
-                instruccion = INSTRUCCION.dfuncion($1, entrada2.instruccion, entrada3.instruccion, entrada4.instruccion, this._$.first_line, this._$.first_column+1)
+                //GET:  Values
+                entrada2 = $4
+                entrada3 = $1
+                entrada4 = $7
+                //OUTPUT
+                instruccion = INSTRUCCION.dfuncion($2, entrada2.instruccion, entrada3.instruccion, entrada4.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEC FUNCION", "DEC FUNCION")
-                nodo.add(new Nodo("ID", $1), new Nodo("OPERADOR", $2), entrada2.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5), entrada3.nodo, new Nodo("OPERADOR", $7), entrada4.nodo ,new Nodo("OPERADOR", $9))
+                nodo.add(new Nodo("ID", $2), new Nodo("OPERADOR", $3), entrada2.nodo, new Nodo("OPERADOR", $5), entrada3.nodo, new Nodo("OPERADOR", $6), entrada4.nodo ,new Nodo("OPERADOR", $8))
                 salida = {
                         nodo: nodo,
                         instruccion: instruccion
@@ -686,10 +667,10 @@ DFUNCION: identificador parA parC dospuntos TIPO llavA INSTRUCCIONES llavC
 ;
 
 PARAMETROS: PARAMETROS coma PARAMETRO {
-               //Obtencion de valores
+               //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push(entrada2.instruccion)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -702,10 +683,10 @@ PARAMETROS: PARAMETROS coma PARAMETRO {
         }
         | PARAMETRO 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("PARAMETROS", "PARAMETROS")
                 nodo.add(entrada1.nodo)
@@ -721,9 +702,9 @@ PARAMETROS: PARAMETROS coma PARAMETRO {
 
 PARAMETRO: TIPO identificador 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaracionp(entrada1.instruccion, $2, null, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("PARAMETRO", "PARAMETRO")
                 nodo.add(entrada1.nodo, new Nodo("ID", $2))
@@ -736,10 +717,11 @@ PARAMETRO: TIPO identificador
         }
 ;
 
-//LLamadas--------------------------------------------------------------------------------
+                                //! Calls
+                                
 LLAMADA:        identificador parA parC puntocoma 
                 {
-                        //Creacion de la salida
+                        //OUTPUT
                         instruccion = INSTRUCCION.llamada($1, null, this._$.first_line, this._$.first_column+1)
                         nodo = new Nodo("LLAMAR", "LLAMAR")
                         nodo.add(new Nodo("ID", $1), new Nodo("OPERADOR", $2), new Nodo("OPERADOR", $3), new Nodo("OPERADOR", $4))
@@ -750,9 +732,9 @@ LLAMADA:        identificador parA parC puntocoma
                         $$ = salida
                 }
                 | identificador parA ENTRADAS parC puntocoma {
-                        //Obtencion de valores
+                        //GET:  Values
                         entrada1 = $3
-                        //Creacion de la salida
+                        //OUTPUT
                         instruccion = INSTRUCCION.llamadaa($1, entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                         nodo = new Nodo("LLAMAR", "LLAMAR")
                         nodo.add(new Nodo("ID", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5))
@@ -764,10 +746,11 @@ LLAMADA:        identificador parA parC puntocoma
                 }
 ;
 
-//Obtener un retorno (usado paa expresiones)-------------------------------------------------------
+                                //* Obtener un retorno (usado paa expresiones)
+
 LLAMADAS:        identificador parA parC 
                 {
-                        //Creacion de la salida
+                        //OUTPUT
                         instruccion = INSTRUCCION.llamadaa($1, null, this._$.first_line, this._$.first_column+1)
                         nodo = new Nodo("LLAMAR", "LLAMAR")
                         nodo.add(new Nodo("ID", $1), new Nodo("OPERADOR", $2), new Nodo("OPERADOR", $3))
@@ -779,9 +762,9 @@ LLAMADAS:        identificador parA parC
                         
                 }
                 | identificador parA ENTRADAS parC {
-                        //Obtencion de valores
+                        //GET:  Values
                         entrada1 = $3
-                        //Creacion de la salida
+                        //OUTPUT
                         instruccion = INSTRUCCION.llamadaa($1, entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                         nodo = new Nodo("LLAMAR", "LLAMAR")
                         nodo.add(new Nodo("IDENTIFICADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4))
@@ -792,13 +775,15 @@ LLAMADAS:        identificador parA parC
                         $$ = salida
                 }
 ;
-//Instrucciones---------------------------------------------------------------------------
+
+                                //* Instrucciones
+
 INSTRUCCIONES: INSTRUCCIONES INSTRUCCION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $2
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push(entrada2.instruccion)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -812,10 +797,10 @@ INSTRUCCIONES: INSTRUCCIONES INSTRUCCION
 
         | INSTRUCCION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("INSTRUCCIONES", "INSTRUCCIONES")
                 nodo.add(entrada1.nodo)
@@ -830,10 +815,10 @@ INSTRUCCIONES: INSTRUCCIONES INSTRUCCION
 
 INSTRUCCION: DVARIABLES
         {
-                 //Obtencion de valores
+                 //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -845,10 +830,10 @@ INSTRUCCION: DVARIABLES
         }
         | AVARIABLES
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -860,10 +845,10 @@ INSTRUCCION: DVARIABLES
         }
         | DARREGLOS
         {
-               //Obtencion de valores
+               //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -875,10 +860,10 @@ INSTRUCCION: DVARIABLES
         }
         | AARREGLOS
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -890,10 +875,10 @@ INSTRUCCION: DVARIABLES
         }
         | RETURN
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -905,10 +890,10 @@ INSTRUCCION: DVARIABLES
         }
         | LLAMADA
         {
-               //Obtencion de valores
+               //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -920,10 +905,10 @@ INSTRUCCION: DVARIABLES
         }
         | PRINT
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -935,10 +920,10 @@ INSTRUCCION: DVARIABLES
         }
         | IF
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -950,10 +935,10 @@ INSTRUCCION: DVARIABLES
         }
         | SWITCH
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -965,10 +950,10 @@ INSTRUCCION: DVARIABLES
         }
         | BREAK
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -980,10 +965,10 @@ INSTRUCCION: DVARIABLES
         }
         | CONTINUE
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -995,10 +980,10 @@ INSTRUCCION: DVARIABLES
         }
         | WHILE
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -1010,10 +995,10 @@ INSTRUCCION: DVARIABLES
         }
         | DOWHILE
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -1025,10 +1010,10 @@ INSTRUCCION: DVARIABLES
         }
         | FOR
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("INSTRUCCION", "INSTRUCCION")
                 nodo.add(entrada1.nodo)
@@ -1043,13 +1028,15 @@ INSTRUCCION: DVARIABLES
                 lista.add("Sintáctico", "Token Inesperado " + $1 , @1.first_line, @1.first_column + 1);
         }
 ;
-//IF------------------------------------------------------------------------------------------
+
+                                //* If
+
 IF: if parA EXPRESION parC llavA INSTRUCCIONES llavC 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
                 entrada2 = $6
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.si(entrada1.instruccion, entrada2.instruccion, null, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("IF", "IF")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5),  entrada2.nodo, new Nodo("OPERADOR", $7))
@@ -1061,11 +1048,11 @@ IF: if parA EXPRESION parC llavA INSTRUCCIONES llavC
         }
         |if parA EXPRESION parC llavA INSTRUCCIONES llavC else llavA INSTRUCCIONES llavC 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
                 entrada2 = $6
                 entrada2 = $10
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.si(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("IF", "IF")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5),  entrada2.nodo, new Nodo("OPERADOR", $7),new Nodo("OPERADOR", $8), new Nodo("OPERADOR", $9), entrada3.nodo, new Nodo("OPERADOR", $11))
@@ -1077,11 +1064,11 @@ IF: if parA EXPRESION parC llavA INSTRUCCIONES llavC
         }
         |if parA EXPRESION parC llavA INSTRUCCIONES llavC else IF 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
                 entrada2 = $6
                 entrada2 = $9
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.si(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("IF", "IF")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5),  entrada2.nodo, new Nodo("OPERADOR", $7),new Nodo("OPERADOR", $8), entrada3.nodo)
@@ -1094,14 +1081,15 @@ IF: if parA EXPRESION parC llavA INSTRUCCIONES llavC
         }
 ;
 
-//Switch------------------------------------------------------------------------------------------
+                                //? switch
+
 SWITCH: switch parA EXPRESION parC llavA CASES DEFAULT llavC 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
                 entrada2 = $6
                 entrada3 = $7
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.switch(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("SWITCH", "SWITCH")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5),  entrada2.nodo, entrada3.nodo,  new Nodo("OPERADOR", $8))
@@ -1113,10 +1101,10 @@ SWITCH: switch parA EXPRESION parC llavA CASES DEFAULT llavC
         }
         | switch parA EXPRESION parC llavA CASES llavC 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
                 entrada2 = $6
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.switch(entrada1.instruccion, entrada2.instruccion,null, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("SWITCH", "SWITCH")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5),  entrada2.nodo, new Nodo("OPERADOR", $7))
@@ -1130,10 +1118,10 @@ SWITCH: switch parA EXPRESION parC llavA CASES DEFAULT llavC
 
 CASES:  CASES CASO
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $2
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push(entrada2.instruccion)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -1147,10 +1135,10 @@ CASES:  CASES CASO
         
         | CASO
         {
-               //Obtencion de valores
+               //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("CASES", "CASES")
                 nodo.add(entrada1.nodo)
@@ -1165,10 +1153,10 @@ CASES:  CASES CASO
 
 CASO: case EXPRESION dospuntos INSTRUCCIONES
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $2
                 entrada2 = $4
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.case(entrada1.instruccion, entrada2.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("CASE", "CASE")
                 nodo.add(new Nodo("OPERADOR", $1), entrada1.nodo, new Nodo("OPERADOR", $3), entrada2.nodo)
@@ -1183,10 +1171,10 @@ CASO: case EXPRESION dospuntos INSTRUCCIONES
         
 DEFAULT:  default dospuntos INSTRUCCIONES
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
                 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.default(null, entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DEFAULT", "DEFAULT")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo)
@@ -1198,13 +1186,14 @@ DEFAULT:  default dospuntos INSTRUCCIONES
         }
 ;
 
-//While------------------------------------------------------------------------------------------
+                                //* While
+
 WHILE: while parA EXPRESION parC llavA INSTRUCCIONES llavC 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
                 entrada2 = $6
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.while(entrada1.instruccion, entrada2.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("WHILE", "WHILE")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5),  entrada2.nodo, new Nodo("OPERADOR", $7))
@@ -1216,13 +1205,14 @@ WHILE: while parA EXPRESION parC llavA INSTRUCCIONES llavC
 
         }
 ;
-//Do While------------------------------------------------------------------------------------------
+                                //* Do while
+
 DOWHILE: do llavA INSTRUCCIONES llavC while parA EXPRESION parC puntocoma
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada2 = $3
                 entrada1 = $7
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.dowhile(entrada1.instruccion, entrada2.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("DO-WHILE", "DO-WHILE")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada2.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5), new Nodo("OPERADOR", $6), entrada1.nodo, new Nodo("OPERADOR", $8), new Nodo("OPERADOR", $9))
@@ -1235,15 +1225,16 @@ DOWHILE: do llavA INSTRUCCIONES llavC while parA EXPRESION parC puntocoma
         }
 ;
 
-//Do While------------------------------------------------------------------------------------------
+                                //* Do While
+
 FOR: for parA DVAR puntocoma EXPRESION puntocoma AVAR parC llavA INSTRUCCIONES llavC
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
                 entrada2 = $5
                 entrada3 = $7
                 entrada4 = $10
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.for(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, entrada4.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("FOR", "FOR")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4), entrada2.nodo, new Nodo("OPERADOR", $6), entrada3.nodo, new Nodo("OPERADOR", $8), new Nodo("OPERADOR", $9), entrada4.nodo, new Nodo("OPERADOR", $11))
@@ -1256,12 +1247,12 @@ FOR: for parA DVAR puntocoma EXPRESION puntocoma AVAR parC llavA INSTRUCCIONES l
         }
         | for parA AVAR puntocoma EXPRESION puntocoma AVAR parC llavA INSTRUCCIONES llavC
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
                 entrada2 = $5
                 entrada3 = $7
                 entrada4 = $10
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.for(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, entrada4.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("FOR", "FOR")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4), entrada2.nodo, new Nodo("OPERADOR", $6), entrada3.nodo, new Nodo("OPERADOR", $8), new Nodo("OPERADOR", $9), entrada4.nodo, new Nodo("OPERADOR", $11))
@@ -1275,12 +1266,12 @@ FOR: for parA DVAR puntocoma EXPRESION puntocoma AVAR parC llavA INSTRUCCIONES l
 
 DVAR:  TIPO LISTAID asignar EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $2
                 entrada3 = $4
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.declaracionv(entrada1.instruccion, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("DECLARACION VAR", "DECLARACION VAR")
                 nodo.add(entrada1.nodo, entrada2.nodo, new Nodo("OPERADOR", $3), entrada3.nodo)
@@ -1295,10 +1286,10 @@ DVAR:  TIPO LISTAID asignar EXPRESION
 
 AVAR: identificador asignar EXPRESION 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.asignacionv($1,entrada2.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("ASIGNACION VAR", "ASIGNACION VAR")
                 nodo.add(new Nodo("ID", $1), new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1310,10 +1301,11 @@ AVAR: identificador asignar EXPRESION
                
         }
 ;
-//Funcion Return---------------------------------------------------------------------------------------
+                                        //*  Return
+
 RETURN: return puntocoma 
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion =INSTRUCCION.return(null, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("RETURN", "RETURN")
                 salida = {
@@ -1325,10 +1317,10 @@ RETURN: return puntocoma
         }
         | return EXPRESION puntocoma 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $2
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.return(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("RETURN", "RETURN")
                 nodo.add(new Nodo("OPERADOR", $1), entrada1.nodo, new Nodo("OPERADOR", $3))
@@ -1342,10 +1334,11 @@ RETURN: return puntocoma
         }
 ;
 
-//Funcion Break---------------------------------------------------------------------------------------
+                                //* Break
+
 BREAK: break puntocoma 
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.break(this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("BREAK", "BREAK")
                 salida = {
@@ -1355,10 +1348,12 @@ BREAK: break puntocoma
                 $$ = salida
         }
 ;
-//Funcion Continue---------------------------------------------------------------------------------------
+
+                                //* Continue
+
 CONTINUE: continue puntocoma 
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.continue(this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("CONTINUE", "CONTINUE")
                 salida = {
@@ -1368,13 +1363,14 @@ CONTINUE: continue puntocoma
                 $$ = salida 
         }
 ;
-//Funcion Print---------------------------------------------------------------------------------------
+                                //* print
+
 PRINT: print parA EXPRESION parC puntocoma
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.print(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("PRINT", "PRINT")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5))
@@ -1387,10 +1383,10 @@ PRINT: print parA EXPRESION parC puntocoma
         }
         | println parA EXPRESION parC puntocoma
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.println(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("PRINTLN", "PRINTLN")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5))
@@ -1402,13 +1398,14 @@ PRINT: print parA EXPRESION parC puntocoma
         }
 ; 
 
-//Funcion Upper---------------------------------------------------------------------------------------
+                                //* upper
+
 UPPER: toUpper parA EXPRESION parC 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.upper(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("UPPER", "UPPER")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4))
@@ -1421,13 +1418,14 @@ UPPER: toUpper parA EXPRESION parC
         }
 ;
 
-//Funcion Lower---------------------------------------------------------------------------------------
+                                //* Lower
+
 LOWER: toLower parA EXPRESION parC 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.lower(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("LOWER", "LOWER")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4))
@@ -1439,13 +1437,14 @@ LOWER: toLower parA EXPRESION parC
         }
 ;
 
-//Funcion Round---------------------------------------------------------------------------------------
+                                //* round
+
 ROUND: round parA EXPRESION parC 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.round(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("ROUND", "ROUND")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4))
@@ -1458,13 +1457,14 @@ ROUND: round parA EXPRESION parC
         }
 ;
 
-//Funcion Lenth---------------------------------------------------------------------------------------
+                                //* Length
+
 LENGTH: length parA EXPRESION parC 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.length(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("LENGTH", "LENGTH")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4))
@@ -1476,13 +1476,14 @@ LENGTH: length parA EXPRESION parC
         }
 ;
 
-//Funcion TypeOf---------------------------------------------------------------------------------------
+                                //* TypeOf
+
 TYPEOF: typeof parA EXPRESION parC 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.typeof(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("TYPEOF", "TYPEOF")
                 nodo.add(new Nodo("OPERADOR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4))
@@ -1495,13 +1496,14 @@ TYPEOF: typeof parA EXPRESION parC
         }
 ;
 
-//Funcion toString---------------------------------------------------------------------------------------
+                                //* toString
+                                
 TOSTRING: tostring parA EXPRESION parC 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.tostring(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("TOSTRING", "TOSTRING")
                 nodo.add(new Nodo("TOSTRING", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4))
@@ -1514,13 +1516,14 @@ TOSTRING: tostring parA EXPRESION parC
         }
 ;
 
-//Funcion toString---------------------------------------------------------------------------------------
+                                //* toChar
+
 TOCHAR: tochar parA EXPRESION parC 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.tochar(entrada1.instruccion, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("TOCHAR", "TOCHAR")
                 nodo.add(new Nodo("TOCHAR", $1), new Nodo("OPERADOR", $2), entrada1.nodo, new Nodo("OPERADOR", $4))
@@ -1532,10 +1535,11 @@ TOCHAR: tochar parA EXPRESION parC
         }
 ;
 
-//Funcion Run---------------------------------------------------------------------------------------
+                                //* Main
+
 RUN: run identificador parA parC puntocoma
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.run($2, null, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("RUN", "RUN")
                 nodo.add(new Nodo("RUN", $1), new Nodo("ID", $2), new Nodo("OPERADOR", $3), new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5))
@@ -1547,9 +1551,9 @@ RUN: run identificador parA parC puntocoma
         }
         | run identificador parA ENTRADAS parC puntocoma 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada2 = $4
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.run($2, entrada2.instruccion, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("RUN", "RUN")
                 nodo.add(new Nodo("RUN", $1), new Nodo("ID", $2), new Nodo("OPERADOR", $3), entrada2.nodo, new Nodo("OPERADOR", $5), new Nodo("OPERADOR", $6))
@@ -1564,10 +1568,10 @@ RUN: run identificador parA parC puntocoma
 
 ENTRADAS: ENTRADAS coma EXPRESION 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
-                //Creacion de la salida
+                //OUTPUT
                 entrada1.instruccion.push(entrada2.instruccion)
                 instruccion = entrada1.instruccion
                 nodo = entrada1.nodo
@@ -1580,10 +1584,10 @@ ENTRADAS: ENTRADAS coma EXPRESION
         }
         | EXPRESION 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = [entrada1.instruccion]
                 nodo = new Nodo("ENTRADA", "ENTRADA")
                 nodo.add(entrada1.nodo)
@@ -1595,10 +1599,11 @@ ENTRADAS: ENTRADAS coma EXPRESION
         }
 ;
 
-//Tipos-----------------------------------------------------------------------------------
+                                //! Tipos
+
 TIPO: int       
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = TIPO_DATO.INT
                 nodo = new Nodo("TIPO", "TIPO")
                 nodo.add(new Nodo("INT", $1))
@@ -1610,7 +1615,7 @@ TIPO: int
         }
     | double    
     {
-            //Creacion de la salida
+            //OUTPUT
                 instruccion = TIPO_DATO.DOUBLE
                 nodo = new Nodo("TIPO", "TIPO")
                 nodo.add(new Nodo("DOUBLE", $1))
@@ -1622,7 +1627,7 @@ TIPO: int
     }
     | boolean   
     {
-            //Creacion de la salida
+            //OUTPUT
                 instruccion = TIPO_DATO.BOOLEAN
                 nodo = new Nodo("TIPO", "TIPO")
                 nodo.add(new Nodo("BOOLEAN", $1))
@@ -1635,7 +1640,7 @@ TIPO: int
     }
     | char      
     {
-            //Creacion de la salida
+            //OUTPUT
                 instruccion = TIPO_DATO.CHAR
                 nodo = new Nodo("TIPO", "TIPO")
                 nodo.add(new Nodo("CHAR", $1))
@@ -1647,7 +1652,7 @@ TIPO: int
     }
     | string    
     {
-            //Creacion de la salida
+            //OUTPUT
                 instruccion = TIPO_DATO.STRING
                 nodo = new Nodo("TIPO", "TIPO")
                 nodo.add(new Nodo("STRING", $1))
@@ -1659,10 +1664,11 @@ TIPO: int
     }
 ;
 
-//Valores Primitivos-----------------------------------------------------------------------------------
+                                //* Valores Primitivos
+
 PRIMITIVO: entero
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor(Number($1), TIPO_VALOR.INT, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("ENTERO", $1))
@@ -1674,7 +1680,7 @@ PRIMITIVO: entero
         }
         | doble
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor(Number($1), TIPO_VALOR.DOUBLE, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("DOBLE", $1))
@@ -1686,7 +1692,7 @@ PRIMITIVO: entero
         }
         | true
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($1, TIPO_VALOR.BOOLEAN, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("BOOLEAN", $1))
@@ -1698,7 +1704,7 @@ PRIMITIVO: entero
         }
         | false
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($1, TIPO_VALOR.BOOLEAN, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("BOOLEAN", $1))
@@ -1710,7 +1716,7 @@ PRIMITIVO: entero
         }
         | texto
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($1, TIPO_VALOR.STRING, this._$.first_line, this._$.first_column+1);;
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("STRING", $1))
@@ -1722,7 +1728,7 @@ PRIMITIVO: entero
         }
         | caracter
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($1, TIPO_VALOR.CHAR, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("CHAR", $1))
@@ -1734,7 +1740,7 @@ PRIMITIVO: entero
         }
         | identificador
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($1, TIPO_VALOR.IDENTIFICADOR, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("PRIMITIVO", "PRIMITIVO")
                 nodo.add(new Nodo("ID", $1))
@@ -1746,14 +1752,15 @@ PRIMITIVO: entero
         }
 ;
 
-//Declaracion de expresiones--------------------------------------------------------------------------
+                                //* Declaracion de expresiones
+
 EXPRESION: EXPRESION mas EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.SUMA, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1766,11 +1773,11 @@ EXPRESION: EXPRESION mas EXPRESION
 
         | EXPRESION menos EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.RESTA, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1782,11 +1789,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION mul EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MULTIPLICACION, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1798,11 +1805,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION div EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.DIVISION, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1814,11 +1821,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION mod EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MODULO, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1830,11 +1837,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION exp EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.POTENCIA, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1847,10 +1854,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | menos EXPRESION %prec umenos
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $2
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,null, TIPO_OPERACION.UNARIO, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("OPERADOR", $1), entrada1.nodo)
@@ -1862,10 +1869,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | parA EXPRESION parC
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $2
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("OPERADOR", $1), entrada1.nodo, new Nodo("OPERADOR", $3))
@@ -1877,11 +1884,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION igual EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.IGUAL, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1893,11 +1900,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION desigual EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.DESIGUAL, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1909,11 +1916,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION menor EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MENOR, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1925,11 +1932,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION menorIgual EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MENORIGUAL, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1941,11 +1948,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION mayor EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MAYOR, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1958,11 +1965,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION mayorIgual EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.MAYORIGUAL, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1974,11 +1981,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION or EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.OR, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -1990,11 +1997,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION and EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,entrada2.instruccion, TIPO_OPERACION.AND, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo)
@@ -2006,10 +2013,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | not EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $2
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion,null, TIPO_OPERACION.NOT, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("OPERADOR", $1), entrada1.nodo)
@@ -2021,12 +2028,12 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION ternario EXPRESION dospuntos EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
                 entrada2 = $3
                 entrada3 = $5
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.ternario(entrada1.instruccion,entrada2.instruccion, entrada3.instruccion, TIPO_OPERACION.TERNARIO, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), entrada2.nodo, new Nodo("OPERADOR", $4), entrada3.nodo)
@@ -2038,7 +2045,7 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | entero
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor(Number($1), TIPO_VALOR.INT, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("ENTERO", $1))
@@ -2050,7 +2057,7 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | doble
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor(Number($1), TIPO_VALOR.DOUBLE, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("DOBLE", $1))
@@ -2062,7 +2069,7 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | true
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($1, TIPO_VALOR.BOOLEAN, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("BOOLEAN", $1))
@@ -2074,7 +2081,7 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | false
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($1, TIPO_VALOR.BOOLEAN, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("BOOLEAN", $1))
@@ -2086,7 +2093,7 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | texto
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($1, TIPO_VALOR.STRING, this._$.first_line, this._$.first_column+1);;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("STRING", $1))
@@ -2098,7 +2105,7 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | caracter
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($1, TIPO_VALOR.CHAR, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("CHAR", $1))
@@ -2110,7 +2117,7 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | identificador
         {
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valor($1, TIPO_VALOR.IDENTIFICADOR, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("ID", $1))
@@ -2122,11 +2129,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | parA TIPO parC EXPRESION
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $2
                 entrada2 = $4
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.casteo(entrada1.instruccion, entrada2.instruccion, TIPO_OPERACION.CASTEO, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("OPERADOR", $1), entrada1.nodo, new Nodo("OPERADOR", $3), entrada2.nodo)
@@ -2138,10 +2145,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION mas mas
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion, null, TIPO_OPERACION.INCREMENTO, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), new Nodo("OPERADOR", $3))
@@ -2153,10 +2160,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | EXPRESION menos menos
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.operacion(entrada1.instruccion, null, TIPO_OPERACION.DECREMENTO, this._$.first_line, this._$.first_column+1)
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo, new Nodo("OPERADOR", $2), new Nodo("OPERADOR", $3))
@@ -2168,10 +2175,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | identificador corA EXPRESION corC 
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada2 = $3
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valorv($1, entrada2.instruccion, null,  this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("ID", $1), new Nodo("OPERADOR", $2), entrada2.nodo, new Nodo("OPERADOR", $4))
@@ -2184,11 +2191,11 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | identificador corA EXPRESION corC corA EXPRESION corC
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada2 = $3
                 entrada3 = $6
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = INSTRUCCION.valorv($1, entrada2.instruccion, entrada3.instruccion, this._$.first_line, this._$.first_column+1);
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(new Nodo("ID", $1), new Nodo("OPERADOR", $2), entrada2.nodo, new Nodo("OPERADOR", $4), new Nodo("OPERADOR", $5), entrada3.nodo, new Nodo("OPERADOR", $7))
@@ -2200,10 +2207,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | LLAMADAS
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo)
@@ -2216,10 +2223,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | UPPER
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo)
@@ -2231,10 +2238,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | LOWER
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo)
@@ -2246,10 +2253,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | ROUND
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo)
@@ -2261,10 +2268,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | LENGTH
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo)
@@ -2276,10 +2283,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | TYPEOF
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo)
@@ -2291,10 +2298,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | TOSTRING
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo)
@@ -2306,10 +2313,10 @@ EXPRESION: EXPRESION mas EXPRESION
         }
         | TOCHAR
         {
-                //Obtencion de valores
+                //GET:  Values
                 entrada1 = $1
 
-                //Creacion de la salida
+                //OUTPUT
                 instruccion = entrada1.instruccion;
                 nodo = new Nodo("EXPRESION", "EXPRESION")
                 nodo.add(entrada1.nodo)
