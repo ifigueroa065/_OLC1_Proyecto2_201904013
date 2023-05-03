@@ -94,59 +94,57 @@
  | RUN
  | error puntocoma`
  
-`DVARIABLES::= TIPO LISTAID asignar EXPRESION puntocoma
+`DVARIABLES -> TIPO LISTAID asignar EXPRESION puntocoma
  | TIPO LISTAID puntocoma`
  
-`LISTAID::= LISTAID coma identificador
+`LISTAID -> LISTAID coma identificador
  | identificador`
  
-`AVARIABLES::= identificador asignar EXPRESION puntocoma`
+`AVARIABLES -> identificador asignar EXPRESION puntocoma`
 
-`AARREGLOS::= identificador corA EXPRESION corC asignar EXPRESION puntocoma
+`AARREGLOS -> identificador corA EXPRESION corC asignar EXPRESION puntocoma
 | identificador corA EXPRESION corC corA EXPRESION corC asignar EXPRESION
 puntocoma`
 
-`DARREGLOS::= UDIMENSION`
+`DARREGLOS -> UDIMENSION`
 
-`UDIMENSION::= TIPO identificador corA corC asignar new TIPO corA EXPRESION
+`UDIMENSION -> TIPO identificador corA corC asignar new TIPO corA EXPRESION
 corC puntocoma
  | TIPO identificador corA corC asignar corA LISTAVALORES corC puntocoma
  | TIPO identificador corA corC asignar EXPRESION puntocoma`
  
-`BDIMENSION::= TIPO identificador corA corC corA corC asignar new TIPO corA
+`BDIMENSION -> TIPO identificador corA corC corA corC asignar new TIPO corA
 EXPRESION corC corA EXPRESION corC puntocoma
  | TIPO identificador corA corC corA corC asignar corA VALORES corC puntocoma`
  
-`LISTAVALORES::= LISTAVALORES coma PRIMITIVO
+`LISTAVALORES -> LISTAVALORES coma PRIMITIVO
  | PRIMITIVO`
  
-`VALORES::= VALORES coma corA LISTAVALORES corC
+`VALORES -> VALORES coma corA LISTAVALORES corC
  | corA LISTAVALORES corC`
 
-`DMETODO::= identificador parA parC llavA INSTRUCCIONES llavC
- |identificador parA parC dospuntos void llavA INSTRUCCIONES llavC
- | identificador parA PARAMETROS parC llavA INSTRUCCIONES llavC
- |identificador parA PARAMETROS parC dospuntos void llavA INSTRUCCIONES
-llavC`
+`DMETODO -> identificador parA parC llavA INSTRUCCIONES llavC
+ | void identificador parA parC llavA INSTRUCCIONES llavC
+ `
 
-`DFUNCION::= identificador parA parC dospuntos TIPO llavA INSTRUCCIONES llavC
-|identificador parA PARAMETROS parC dospuntos TIPO llavA INSTRUCCIONES llavC`
+`DFUNCION ->TIPO identificador parA parC  llavA INSTRUCCIONES llavC
+|TIPO identificador parA PARAMETROS parC  llavA INSTRUCCIONES llavC`
 
-`PARAMETROS::= PARAMETROS coma PARAMETRO {
+`PARAMETROS -> PARAMETROS coma PARAMETRO 
  | PARAMETRO`
 
-`PARAMETRO::= TIPO identificador`
+`PARAMETRO -> TIPO identificador`
 
-`LLAMADA::= identificador parA parC puntocoma
+`LLAMADA -> identificador parA parC puntocoma
  | identificador parA ENTRADAS parC puntocoma`
  
-`LLAMADAS::= identificador parA parC
+`LLAMADAS -> identificador parA parC
  | identificador parA ENTRADAS parC`
  
-`INSTRUCCIONES::= INSTRUCCIONES INSTRUCCION
+`INSTRUCCIONES -> INSTRUCCIONES INSTRUCCION
  | INSTRUCCION`
  
-`INSTRUCCION::= DVARIABLES
+`INSTRUCCION -> DVARIABLES
  | AVARIABLES
  | DARREGLOS
  | AARREGLOS
@@ -162,71 +160,71 @@ llavC`
  | FOR
  | error puntocoma`
 
-`IF::= if parA EXPRESION parC llavA INSTRUCCIONES llavC
+`IF -> if parA EXPRESION parC llavA INSTRUCCIONES llavC
  | if parA EXPRESION parC llavA INSTRUCCIONES llavC else llavA INSTRUCCIONES
 llavC
 |if parA EXPRESION parC llavA INSTRUCCIONES llavC else IF`
 
-`SWITCH::= switch parA EXPRESION parC llavA CASES DEFAULT llavC`
+`SWITCH -> switch parA EXPRESION parC llavA CASES DEFAULT llavC`
 
-`CASES::= CASES CASO
+`CASES -> CASES CASO
  | CASO`
  
-`CASO::= case EXPRESION dospuntos INSTRUCCIONES`
+`CASO -> case EXPRESION dospuntos INSTRUCCIONES`
 
-`DEFAULT::= default dospuntos INSTRUCCIONES`
+`DEFAULT -> default dospuntos INSTRUCCIONES`
 
-`WHILE::= while parA EXPRESION parC llavA INSTRUCCIONES llavC`
+`WHILE -> while parA EXPRESION parC llavA INSTRUCCIONES llavC`
 
-`DOWHILE::= do llavA INSTRUCCIONES llavC while parA EXPRESION parC
+`DOWHILE -> do llavA INSTRUCCIONES llavC while parA EXPRESION parC
 puntocoma`
 
-`FOR::= for parA DVAR puntocoma EXPRESION puntocoma AVAR parC llavA
+`FOR -> for parA DVAR puntocoma EXPRESION puntocoma AVAR parC llavA
 INSTRUCCIONES llavC
 | for parA AVAR puntocoma EXPRESION puntocoma AVAR parC llavA
 INSTRUCCIONES llavC`
 
-`DVAR::= TIPO LISTAID asignar EXPRESION`
+`DVAR -> TIPO LISTAID asignar EXPRESION`
 
-`AVAR::= identificador asignar EXPRESION`
+`AVAR -> identificador asignar EXPRESION`
 
-`RETURN::= return puntocoma
+`RETURN -> return puntocoma
  | return EXPRESION puntocoma`
  
-`BREAK::= break puntocoma`
+`BREAK -> break puntocoma`
 
-`CONTINUE::= continue puntocoma`
+`CONTINUE -> continue puntocoma`
 
-`PRINT::= print parA EXPRESION parC puntocoma
+`PRINT -> print parA EXPRESION parC puntocoma
  | println parA EXPRESION parC puntocoma`
  
-`UPPER::= toUpper parA EXPRESION parC`
+`UPPER -> toUpper parA EXPRESION parC`
 
-`LOWER::= toLower parA EXPRESION parC`
+`LOWER -> toLower parA EXPRESION parC`
 
-`ROUND::= round parA EXPRESION parC`
+`ROUND -> round parA EXPRESION parC`
 
-`LENGTH::= length parA EXPRESION parC`
+`LENGTH -> length parA EXPRESION parC`
 
-`TYPEOF::= typeof parA EXPRESION parC`
+`TYPEOF -> typeof parA EXPRESION parC`
 
-`TOSTRING::= tostring parA EXPRESION parC`
+`TOSTRING -> tostring parA EXPRESION parC`
 
-`TOCHAR::= tochar parA EXPRESION parC`
+`TOCHAR -> tochar parA EXPRESION parC`
 
-`RUN::= run identificador parA parC puntocoma
+`RUN -> run identificador parA parC puntocoma
  | run identificador parA ENTRADAS parC puntocoma`
  
-`ENTRADAS::= ENTRADAS coma EXPRESION
+`ENTRADAS -> ENTRADAS coma EXPRESION
  | EXPRESION`
  
-`TIPO::= int
+`TIPO -> int
  | double
  | boolean
  | char
  | string`
  
-`PRIMITIVO::= entero
+`PRIMITIVO -> entero
  | doble
  | true
  | false
@@ -234,7 +232,7 @@ INSTRUCCIONES llavC`
  | caracter
  | identificador`
  
-`EXPRESION::= EXPRESION mas EXPRESION
+`EXPRESION -> EXPRESION mas EXPRESION
  | EXPRESION menos EXPRESION
  | EXPRESION mul EXPRESION
  | EXPRESION div EXPRESION

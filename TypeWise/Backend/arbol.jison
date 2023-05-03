@@ -647,8 +647,7 @@ DFUNCION:TIPO identificador parA parC llavA INSTRUCCIONES llavC
                 $$ = salida
                 
         }
-        |identificador parA PARAMETROS parC dospuntos TIPO llavA INSTRUCCIONES llavC
-        TIPO identificador parA PARAMETROS parC llavA INSTRUCCIONES llavC
+        |TIPO identificador parA PARAMETROS parC llavA INSTRUCCIONES llavC
         {
                 //GET:  Values
                 entrada2 = $4
