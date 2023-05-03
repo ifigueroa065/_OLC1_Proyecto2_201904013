@@ -1,4 +1,4 @@
-# MANUAL DE USUARIO ExREGAN :yellow_heart: :snake:
+# MANUAL DE USUARIO TypeWise :yellow_heart: :snake:
 
 
 
