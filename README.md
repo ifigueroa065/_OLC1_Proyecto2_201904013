@@ -34,11 +34,4 @@ y producir las salidas esperadas.
 ### :large_orange_diamond: Jison
     npm install jison -g
     
-## ¿Tienes problemas al compilar tu archivo Jison? :neutral_face::neutral_face:
-    https://www.cdmon.com/es/blog/la-ejecucion-de-scripts-esta-deshabilitada-en-este-sistema-te-contamos-como-actuar
 
-## :arrow_forward: ¿Cómo correr el proyecto? 
-
-- :one: Debes realizar **npm install** en Backend y Frontend para instalar las dependecias necesarias
-- :two: ejecuta **npm start** :)
-- :three: Para compilar la gramatica necesitas ejecutar **jison** gramatica.jison
