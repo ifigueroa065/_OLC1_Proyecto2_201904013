@@ -21,8 +21,8 @@
 "false"                     return 'false';
 "new"                       return 'new';
 "void"                      return 'void';
-"print"                     return 'print';
-"println"                   return 'println';
+"println"                     return 'print';
+"print"                   return 'println';
 "return"                    return 'return';
 "toLower"                   return 'toLower';
 "toUpper"                   return 'toUpper';

@@ -21,7 +21,7 @@ export class AnalizarService {
         'Content-Type': 'application/json'
       }),
     };
-    //return this.http.post<any>(URL + 'analizar', codigo);
+    
     return this.http.post<any>(URL + 'analizar', codigo);
   }
 

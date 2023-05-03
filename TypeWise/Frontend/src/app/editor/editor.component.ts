@@ -32,6 +32,7 @@ export class EditorComponent implements OnInit {
     }
     this.analizarService.ejecutar(objeto).subscribe((res:any)=>{
       console.log(res)
+      alert("estoy analizando tu archivo")
       this.salida = (res.salida);
       this.analizarService.setErrores(res.errores.lista);
       this.analizarService.setSimbolos(res.simbolos.lista);
@@ -79,19 +80,7 @@ export class EditorComponent implements OnInit {
       reader.onerror = (e) => alert(e.target.error.name);
       reader.readAsText(file); 
     }
-    /*
-    const file = event.target.files[0];
-    let reader = new FileReader();
-    let textarea = document.querySelector('textarea');
-    reader.onload = (e) => {
-        const file = e.target.result;
-        console.log(typeof(file))
-        const lines = (file as string).split(/\r\n|\n/);
-        this.carga = lines.join('\n');
-    };
-    reader.onerror = (e) => alert(e.target.error.name);
-    reader.readAsText(file); 
-    */
+    
   }
 
 }

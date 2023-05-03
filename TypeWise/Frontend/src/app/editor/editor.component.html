@@ -1,9 +1,6 @@
 
-
-
 <main id="main">
 
-  
      <!-- ======= Inicio Section ======= -->
      <section id="facts" class="facts">
         <div class="container">
@@ -18,30 +15,36 @@
                  <form [formGroup]="form" (ngSubmit)="enviarCodigo()">
                     <div class="row">
                         <div class="col-100">
-                         
+                          
                             <div class="btn-group">
                                
                                 <input type="file" class="file-input" (change)="abrir($event)" #fileUpload multiple>
-                                
-         
                                 <button type="button" class="btn btn-dark" (click)="limpiar()">Nuevo</button>
                                 <button type="button" class="btn btn-dark" (click)="fileUpload.click()">Abrir</button>
                                 <button type="button" class="btn btn-dark" (click)="guardar()">Guardar</button>
                                 
+                            </div>
+                              <br><br>
+                              <div class="section-title">
+                                <h2>INPUT</h2>
                               </div>
                             <textarea  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" formControlName="codigo" class="code" [(ngModel)]="carga"></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-100 flex j-center">
-                            <button [disabled]="form.invalid" type="submit" class="btn btn-success">Analizar</button>
+                            <button [disabled]="form.invalid" type="submit" class="btn btn-warning">Analizar</button>
                         </div>
                     </div>
                 </form>
          
                 <!-- OUTPUT TYPEWISE -->
+              
+                <div class="section-title">
+                  <h2>OUTPUT</h2>
+                </div>
                 <div class="consol">
-                    <span style="text-align: start;">OUTPUT:</span>
+                    <span style="text-align: start;"></span>
                     <pre>{{salida}}</pre>
                 </div>
              </div> 

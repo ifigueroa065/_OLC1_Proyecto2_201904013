@@ -8,10 +8,13 @@ import * as vis from "vis";
   templateUrl: './reportes.component.html',
   styleUrls: ['./reportes.component.css']
 })
+
+
 //GRAPHVIZ BASADO EN: https://stackoverflow.com/questions/40296821/how-to-make-vis-js-lib-to-work-with-angular2
 //CONFIGURACIONES: https://stackoverflow.com/questions/51105775/plotting-huge-trees-with-vis-js
 //CREAR DIRECTIVA: https://www.freecodecamp.org/news/angular-directives-learn-how-to-use-or-create-custom-directives-in-angular-c9b133c24442/
 //SEPARAR ENTRADA: https://codesandbox.io/s/j2ypy88p1y?file=/src/index.js
+
 export class ReportesComponent implements OnInit {
   
   graphData = {}; 
